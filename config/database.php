@@ -32,6 +32,15 @@ return [
 
     'connections' => [
 
+        // Read-only source: the bundled MH4U SQLite database that the import
+        // seeder (Mh4uImportSeeder) reads from. Never written to at runtime.
+        'sqlite_source' => [
+            'driver' => 'sqlite',
+            'database' => env('MH4U_SOURCE_DB', database_path('source/mh4u.db')),
+            'prefix' => '',
+            'foreign_key_constraints' => false,
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
