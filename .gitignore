@@ -33,3 +33,10 @@ Thumbs.db
 # editable source lives in .scribe/)
 /public/vendor/scribe
 /resources/views/scribe
+
+# Local data sources — never committed (DMCA hygiene). The scraped Kiranico JSON
+# (populated from the mh4u-kiranico-scraper output) and the full MySQL dump
+# produced by `php artisan mh4u:export-sql`. The bundled mh4u.db is still tracked
+# for now; it will be untracked once the dump becomes the source of record.
+/database/source/kiranico/
+/database/source/mh4u_full.sql
