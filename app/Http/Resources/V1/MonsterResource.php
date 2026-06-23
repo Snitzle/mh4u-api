@@ -65,6 +65,7 @@ class MonsterResource extends JsonResource
                     ->map(fn ($group) => HuntingRewardResource::collection($group)),
             ),
             'quests' => QuestSummaryResource::collection($this->whenLoaded('quests')),
+            'sounds' => $this->whenLoaded('sounds', fn () => $this->sounds->pluck('filename')),
         ];
     }
 

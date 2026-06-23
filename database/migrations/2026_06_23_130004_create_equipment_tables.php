@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('awaken')->nullable();
             $table->integer('awaken_attack')->nullable();
             $table->integer('defense')->nullable();
-            $table->text('sharpness')->nullable();
+            // Sharpness now lives in the structured `weapon_sharpness` table.
             $table->string('affinity');
             $table->string('horn_notes')->nullable();
             $table->string('shelling_type')->nullable();
@@ -40,7 +40,7 @@ return new class extends Migration
             $table->string('reload_speed')->nullable();
             $table->text('rapid_fire')->nullable();
             $table->string('deviation')->nullable();
-            $table->text('ammo')->nullable();
+            // Per-type ammo capacities now live in the `weapon_ammo` table.
             $table->text('special_ammo')->nullable();
             $table->integer('num_slots');
             $table->integer('tree_depth');

@@ -57,4 +57,16 @@ return [
 
     'rate_limit' => (int) env('MH4U_RATE_LIMIT', 60),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Kiranico Data Directory
+    |--------------------------------------------------------------------------
+    |
+    | Directory the KiranicoImportSeeder reads the scraped JSON from. It is
+    | gitignored (never committed); the seeder skips gracefully when absent.
+    |
+    */
+
+    'kiranico_data' => env('MH4U_KIRANICO_DATA', database_path('source/kiranico')),
+
 ];

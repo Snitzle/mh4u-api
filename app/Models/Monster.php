@@ -113,4 +113,10 @@ class Monster extends BaseModel
     {
         return $this->hasMany(MonsterTrapEffect::class)->orderBy('sort_order');
     }
+
+    /** @return HasMany<MonsterSound, $this> */
+    public function sounds(): HasMany
+    {
+        return $this->hasMany(MonsterSound::class);
+    }
 }

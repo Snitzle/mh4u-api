@@ -65,6 +65,12 @@ class Armor extends BaseModel
         return $this->hasMany(Component::class, 'created_item_id', 'id');
     }
 
+    /** @return HasMany<ArmorModel, $this> */
+    public function models(): HasMany
+    {
+        return $this->hasMany(ArmorModel::class);
+    }
+
     /**
      * Armor of a given rarity (rarity lives on the shared item row).
      *

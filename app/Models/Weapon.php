@@ -8,6 +8,7 @@ use App\Enums\WeaponType;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * @property WeaponType $wtype
@@ -68,6 +69,38 @@ class Weapon extends BaseModel
     public function componentsRequired(): HasMany
     {
         return $this->hasMany(Component::class, 'created_item_id', 'id');
+    }
+
+    /**
+     * Structured per-colour sharpness (replaces the old `sharpness` text column).
+     *
+     * @return HasOne<WeaponSharpness, $this>
+     */
+    public function sharpness(): HasOne
+    {
+        return $this->hasOne(WeaponSharpness::class);
+    }
+
+    /**
+     * Bowgun ammo capacities (replaces the old `ammo` text column).
+     *
+     * @return HasMany<WeaponAmmo, $this>
+     */
+    public function ammo(): HasMany
+    {
+        return $this->hasMany(WeaponAmmo::class);
+    }
+
+    /** @return HasMany<WeaponModel, $this> */
+    public function models(): HasMany
+    {
+        return $this->hasMany(WeaponModel::class);
+    }
+
+    /** @return HasMany<WeaponSound, $this> */
+    public function sounds(): HasMany
+    {
+        return $this->hasMany(WeaponSound::class);
     }
 
     /**

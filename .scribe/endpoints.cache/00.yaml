@@ -127,7 +127,7 @@ endpoints:
           cache-control: 'max-age=86400, public'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-remaining: '38'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null

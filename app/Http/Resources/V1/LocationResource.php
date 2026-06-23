@@ -34,6 +34,14 @@ class LocationResource extends JsonResource
                     ->groupBy(fn (Gathering $gathering): string => $gathering->rank->value)
                     ->map(fn ($group) => GatheringResource::collection($group)),
             ),
+            'areas' => $this->whenLoaded('areas', fn () => $this->areas->map(fn ($area): array => [
+                'name' => $area->area_name,
+                'hot_drink' => $area->hot_drink,
+                'cool_drink' => $area->cool_drink,
+                'torch' => $area->torch,
+                'pitfall_trap' => $area->pitfall_trap,
+                'shock_trap' => $area->shock_trap,
+            ])),
         ];
     }
 }

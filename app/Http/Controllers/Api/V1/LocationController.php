@@ -40,6 +40,7 @@ class LocationController extends ApiController
         $location->load([
             'monsters',
             'gathering.item',
+            'areas',
         ]);
 
         return LocationResource::make($location);

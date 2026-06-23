@@ -23,7 +23,6 @@ class WeaponResource extends JsonResource
     public function toArray(Request $request): array
     {
         $item = $this->item;
-        $isRanged = $this->wtype->isRanged();
         $isBowgun = $this->wtype->isBowgun();
 
         return [
@@ -40,6 +39,7 @@ class WeaponResource extends JsonResource
             'max_attack' => $this->max_attack,
             'affinity' => $this->affinity,
             'defense' => $this->defense,
+            'attack_modifier' => $this->wtype->modifier(),
             'num_slots' => $this->num_slots,
             'element' => $this->when($this->element !== null, fn (): array => [
                 'type' => $this->element,
@@ -55,7 +55,7 @@ class WeaponResource extends JsonResource
             ]),
 
             // Melee-only attributes.
-            'sharpness' => $this->when(! $isRanged, $this->sharpness),
+            'sharpness' => $this->when(! $this->wtype->isRanged(), fn () => $this->sharpnessPayload()),
             'shelling_type' => $this->when($this->wtype->value === 'Gunlance', $this->shelling_type),
             'phial' => $this->when(in_array($this->wtype->value, ['Switch Axe', 'Charge Blade'], true), $this->phial),
             'horn_notes' => $this->when($this->wtype->isHuntingHorn(), $this->horn_notes),
@@ -63,7 +63,12 @@ class WeaponResource extends JsonResource
             // Ranged-only attributes.
             'charges' => $this->when($this->wtype->value === 'Bow', $this->charges),
             'coatings' => $this->when($this->wtype->value === 'Bow', $this->coatings),
-            'ammo' => $this->when($isBowgun, $this->ammo),
+            'ammo' => $this->when($isBowgun, fn () => $this->ammo->map(fn ($a): array => [
+                'item_id' => $a->item_id,
+                'item' => $a->item?->name,
+                'capacity' => $a->capacity,
+                'special' => $a->capacity_special,
+            ])),
             'special_ammo' => $this->when($isBowgun, $this->special_ammo),
             'rapid_fire' => $this->when($isBowgun, $this->rapid_fire),
             'recoil' => $this->when($isBowgun, $this->recoil),
@@ -75,6 +80,31 @@ class WeaponResource extends JsonResource
             'children' => WeaponSummaryResource::collection($this->whenLoaded('children')),
             'melodies' => HornMelodyResource::collection($this->whenLoaded('hornMelodies')),
             'components' => ComponentResource::collection($this->whenLoaded('componentsRequired')),
+            'models' => $this->whenLoaded('models', fn () => $this->models->map(fn ($m): array => [
+                'filename' => $m->filename,
+                'index' => $m->model_index,
+            ])),
+            'sounds' => $this->whenLoaded('sounds', fn () => $this->sounds->pluck('filename')),
+        ];
+    }
+
+    /**
+     * Structured per-colour sharpness (base + Sharpness+1), or null for weapons
+     * without sharpness (bowguns/bows).
+     *
+     * @return array<string, array<string, int|null>>|null
+     */
+    private function sharpnessPayload(): ?array
+    {
+        $sharpness = $this->sharpness;
+        if ($sharpness === null) {
+            return null;
+        }
+        $colours = ['red', 'orange', 'yellow', 'green', 'blue', 'white', 'purple'];
+
+        return [
+            'normal' => collect($colours)->mapWithKeys(fn (string $c): array => [$c => $sharpness->{$c}])->all(),
+            'plus' => collect($colours)->mapWithKeys(fn (string $c): array => [$c => $sharpness->{$c.'_plus'}])->all(),
         ];
     }
 }

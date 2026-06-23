@@ -43,8 +43,10 @@ class ArmorResource extends JsonResource
             'hunter_type' => $this->hunter_type,
             'num_slots' => $this->num_slots,
             'buy' => $item?->buy,
+            'armor_set_id' => $this->armorset_id,
             'skill_trees' => SkillTreePointResource::collection($this->whenLoaded('skillTrees')),
             'components' => ComponentResource::collection($this->whenLoaded('componentsRequired')),
+            'models' => $this->whenLoaded('models', fn () => $this->models->pluck('filename')),
         ];
     }
 }

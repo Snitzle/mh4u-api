@@ -54,6 +54,7 @@ class MonsterController extends ApiController
             'quests',
             'staggerLimits',
             'trapEffects',
+            'sounds',
         ]);
 
         return MonsterResource::make($monster);

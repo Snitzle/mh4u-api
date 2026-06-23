@@ -59,6 +59,7 @@ class QuestController extends ApiController
             'monsters',
             'prerequisites',
             'rewards.item',
+            'supplies.item',
         ]);
 
         return QuestResource::make($quest);

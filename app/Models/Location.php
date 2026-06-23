@@ -57,4 +57,10 @@ class Location extends BaseModel
         return $this->belongsToMany(Monster::class, 'monster_habitats', 'location_id', 'monster_id')
             ->withPivot('start_area', 'move_area', 'rest_area');
     }
+
+    /** @return HasMany<MapArea, $this> */
+    public function areas(): HasMany
+    {
+        return $this->hasMany(MapArea::class)->orderBy('sort_order');
+    }
 }

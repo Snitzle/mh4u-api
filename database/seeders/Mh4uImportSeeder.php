@@ -154,6 +154,8 @@ class Mh4uImportSeeder extends Seeder
             $data['parent_id'] = ($data['parent_id'] ?? 0) ?: null;
             $rarity = $rarities[$data['id']] ?? 0;
             $data['icon_name'] = WeaponType::from((string) $data['wtype'])->iconPrefix().$rarity.'.png';
+            // Superseded by the structured weapon_sharpness / weapon_ammo tables.
+            unset($data['sharpness'], $data['ammo']);
 
             return $data;
         });

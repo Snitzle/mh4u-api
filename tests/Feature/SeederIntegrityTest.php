@@ -6,6 +6,8 @@ use App\Models\Armor;
 use App\Models\Decoration;
 use App\Models\Monster;
 use App\Models\Weapon;
+use Database\Seeders\KiranicoTopUpSeeder;
+use Database\Seeders\Mh4uImportSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 
@@ -56,8 +58,11 @@ function expectedRowCounts(): array
 }
 
 beforeEach(function (): void {
-    // DatabaseSeeder = Mh4uImportSeeder + KiranicoTopUpSeeder (the universal-gap top-up).
-    $this->seed();
+    // The mh4u.db import + the monster universal-gap top-up. The heavy,
+    // gitignored-data comprehensive import (KiranicoImportSeeder) is exercised
+    // separately so this integrity suite stays fast and CI-portable.
+    $this->seed(Mh4uImportSeeder::class);
+    $this->seed(KiranicoTopUpSeeder::class);
 });
 
 test('every table imports the exact expected row count', function (): void {
@@ -94,7 +99,8 @@ test('foreign keys reference existing rows', function (): void {
 });
 
 test('the seeder is idempotent', function (): void {
-    $this->seed();
+    $this->seed(Mh4uImportSeeder::class);
+    $this->seed(KiranicoTopUpSeeder::class);
 
     expect(DB::table('monsters')->count())->toBe(106)
         ->and(DB::table('items')->count())->toBe(7324)

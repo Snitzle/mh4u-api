@@ -56,6 +56,7 @@ class ArmorController extends ApiController
             'item',
             'skillTrees',
             'componentsRequired.componentItem',
+            'models',
         ]);
 
         return ArmorResource::make($armor);

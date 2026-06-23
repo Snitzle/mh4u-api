@@ -12,5 +12,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(Mh4uImportSeeder::class);
         $this->call(KiranicoTopUpSeeder::class);
+        $this->call(KiranicoImportSeeder::class);
     }
 }

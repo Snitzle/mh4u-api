@@ -55,6 +55,10 @@ class WeaponController extends ApiController
             'parent.item',
             'children.item',
             'componentsRequired.componentItem',
+            'sharpness',
+            'ammo.item',
+            'models',
+            'sounds',
         ]);
 
         if ($weapon->wtype->isHuntingHorn()) {

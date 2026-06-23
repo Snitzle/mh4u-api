@@ -69,6 +69,12 @@ class Quest extends BaseModel
         return $this->belongsToMany(self::class, 'quest_prereqs', 'quest_id', 'prereq_id');
     }
 
+    /** @return HasMany<QuestSupply, $this> */
+    public function supplies(): HasMany
+    {
+        return $this->hasMany(QuestSupply::class)->orderBy('sort_order');
+    }
+
     /**
      * Quests in which the given monster appears.
      *

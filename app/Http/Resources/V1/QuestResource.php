@@ -33,7 +33,15 @@ class QuestResource extends JsonResource
             'sub_goal' => $this->sub_goal,
             'sub_reward' => $this->sub_reward,
             'sub_hrp' => $this->sub_hrp,
+            'priority' => $this->priority,
+            'hrp_required' => $this->hrp_required,
+            'map_time' => $this->map_time,
             'location' => $this->whenLoaded('location', fn () => LocationSummaryResource::make($this->location)),
+            'supplies' => $this->whenLoaded('supplies', fn () => $this->supplies->map(fn ($s): array => [
+                'item_id' => $s->item_id,
+                'item' => $s->item?->name,
+                'quantity' => $s->quantity,
+            ])),
             'monsters' => MonsterSummaryResource::collection($this->whenLoaded('monsters')),
             'prerequisites' => QuestSummaryResource::collection($this->whenLoaded('prerequisites')),
             'rewards' => $this->whenLoaded(
