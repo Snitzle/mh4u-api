@@ -46,4 +46,15 @@ return [
 
     'cache_ttl' => (int) env('MH4U_CACHE_TTL', 86400),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Rate Limit
+    |--------------------------------------------------------------------------
+    |
+    | Requests per minute per IP for the public API.
+    |
+    */
+
+    'rate_limit' => (int) env('MH4U_RATE_LIMIT', 60),
+
 ];
