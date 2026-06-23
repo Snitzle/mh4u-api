@@ -1,0 +1,15 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    level: 6
+
+    paths:
+        - app
+        - database/seeders
+        - database/factories
+        - routes
+
+    # Eloquent models are read-only reference data; we don't annotate every
+    # dynamic property. Raise the level over time as annotations are added.
+    checkModelProperties: false
