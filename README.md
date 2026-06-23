@@ -220,6 +220,13 @@ The game data is imported from the community-built SQLite database used by the
 [MonsterHunter4UDatabase](https://github.com/kamegami13/MonsterHunter4UDatabase)
 Android app. All credit for compiling that data goes to its original authors.
 
+Some per-monster fields the original import lacked — HP and rank multipliers,
+crown-size thresholds, enraged modifiers, limping/capture thresholds, stagger
+limits, raw trap durations and ecology text — are topped up from
+[Kiranico](https://kiranico.com/en/mh4u). That snapshot lives at
+`database/source/kiranico.json` and is regenerable with
+`node database/source/kiranico-scrape.mjs`.
+
 *Monster Hunter 4 Ultimate*, all related names, assets and imagery are
 trademarks of **© CAPCOM CO., LTD.** This is an unofficial, non-commercial fan
 project and is not affiliated with or endorsed by Capcom.
