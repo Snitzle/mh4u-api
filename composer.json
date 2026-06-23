@@ -54,7 +54,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#93c5fd,#fb7185\" \"php artisan serve\" \"php artisan pail --timeout=0\" --names=server,logs --kill-others"
+            "npx concurrently -c \"#93c5fd,#fb7185\" \"php artisan serve --port=8088\" \"php artisan pail --timeout=0\" --names=server,logs --kill-others"
         ],
         "test": [
             "@php artisan config:clear --ansi @no_additional_args",

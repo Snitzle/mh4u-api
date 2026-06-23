@@ -3,7 +3,7 @@
 A public, read-only REST API for the Monster Hunter 4 Ultimate game database: monsters, weapons, armor, items, quests, locations, skills and more. Responses are cached and rate-limited; pass ?lang=de|fr|es|it|jp to localize names.
 
 <aside>
-    <strong>Base URL</strong>: <code>http://localhost</code>
+    <strong>Base URL</strong>: <code>http://localhost:8088</code>
 </aside>
 
     This documentation aims to provide all the information you need to work with our API.

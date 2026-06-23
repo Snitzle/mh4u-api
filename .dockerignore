@@ -1,0 +1,4 @@
+# The image COPYs only docker-entrypoint.sh; everything else is bind-mounted at
+# runtime. Keep the build context tiny by excluding everything else.
+*
+!docker-entrypoint.sh

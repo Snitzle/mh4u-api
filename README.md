@@ -3,7 +3,7 @@
 > A public, read-only REST API for the **Monster Hunter 4 Ultimate** game database — monsters, weapons, armor, decorations, items, quests, locations, skills and more.
 
 ![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.4-777BB4?logo=php&logoColor=white)
 ![Tested with Pest](https://img.shields.io/badge/tested%20with-Pest-8BC34A?logo=pest&logoColor=white)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 
@@ -38,7 +38,7 @@ The data behind the original [MH4U companion apps](https://github.com/kamegami13
 
 ## Endpoints
 
-Base URL: `http://localhost:8000/api/v1`
+Base URL: `http://localhost:8088/api/v1`
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
@@ -75,8 +75,8 @@ Full, always-up-to-date docs (with every parameter and response field) are gener
 # Partial-match filter + sort, English only
 GET /api/v1/monsters?filter[name]=tigrex&sort=name&lang=en
 
-# Filter monsters by class, descending sort
-GET /api/v1/monsters?filter[class]=Flying Wyvern&sort=-name
+# Filter monsters by class (Boss or Minion), descending sort
+GET /api/v1/monsters?filter[class]=Boss&sort=-name
 
 # Search a few types, capped at 5 hits each
 GET /api/v1/search?q=tigrex&types=monsters,weapons&limit=5
@@ -95,18 +95,18 @@ GET /api/v1/search?q=tigrex&types=monsters,weapons&limit=5
 {
   "data": [
     {
-      "id": 40,
-      "name": "Tigrex",
-      "class": "Flying Wyvern",
-      "icon_url": "http://localhost:8000/assets/icons/monsters/tigrex.png"
+      "id": 72,
+      "name": "Rathalos",
+      "class": "Boss",
+      "icon_url": "http://localhost:8088/assets/monsters/MH4U-Rathalos_Icon.png"
     }
   ],
   "links": { "first": "...", "last": "...", "prev": null, "next": "..." },
-  "meta": { "current_page": 1, "per_page": 20, "total": 95 }
+  "meta": { "current_page": 1, "per_page": 30, "total": 106 }
 }
 ```
 
-`GET /api/v1/search?q=tigrex`
+`GET /api/v1/search?q=rathalos`
 
 ```json
 {
@@ -114,31 +114,63 @@ GET /api/v1/search?q=tigrex&types=monsters,weapons&limit=5
     "monsters": [
       {
         "type": "monster",
-        "id": 40,
-        "name": "Tigrex",
-        "icon_url": "http://localhost:8000/assets/icons/monsters/tigrex.png",
-        "url": "http://localhost:8000/api/v1/monsters/40"
+        "id": 72,
+        "name": "Rathalos",
+        "icon_url": "http://localhost:8088/assets/monsters/MH4U-Rathalos_Icon.png",
+        "url": "http://localhost:8088/api/v1/monsters/72"
       }
     ]
   },
-  "meta": { "query": "tigrex" }
+  "meta": { "query": "rathalos" }
 }
 ```
 
-Without `?lang`, the `name` field is returned as `{ "en": "Tigrex", "de": "Tigrex", ... }`.
+Without `?lang`, the `name` field is returned as `{ "en": "Rathalos", "de": "Rathalos", ... }`.
 
 ## Getting started
 
-**Requirements:** PHP 8.3+ and [Composer](https://getcomposer.org/). SQLite is the default, so no database server is needed to run locally.
+The fastest way to run the API locally is **Docker** — no PHP or Composer needed
+on your machine. Prefer a native install? See Option B.
+
+### Option A — Docker (recommended)
+
+**Requirements:** Docker (Desktop or engine) with Compose v2.
+
+```bash
+git clone https://github.com/Snitzle/mh4u-api.git
+cd mh4u-api
+docker compose up --build
+```
+
+On first boot this builds a PHP 8.4 image, then (inside the container) installs
+dependencies, creates and seeds the SQLite database from the bundled
+`database/source/mh4u.db`, syncs the game image assets and exports the API docs —
+then serves the API. Later boots skip the seed and start in seconds.
+
+- API:  **http://localhost:8088/api/v1**
+- Docs: **http://localhost:8088/docs**
+
+Stop with `Ctrl-C`, or `docker compose down` to remove the container. The repo is
+bind-mounted, so host edits are picked up live and `vendor/`, `.env` and the
+SQLite file persist between runs. Run any Artisan/Composer command in the
+container with `docker compose exec`:
+
+```bash
+docker compose exec api composer ci                        # lint + stan + tests
+docker compose exec api php artisan migrate:fresh --seed   # re-import data
+```
+
+### Option B — Native PHP
+
+**Requirements:** PHP 8.3+ (8.4 recommended) and [Composer](https://getcomposer.org/).
+SQLite is the default, so no database server is needed.
 
 ```bash
 git clone https://github.com/Snitzle/mh4u-api.git
 cd mh4u-api
 composer setup
-composer dev
+php artisan serve --port=8088
 ```
-
-The API is now at `http://localhost:8000/api/v1` and the docs at `http://localhost:8000/docs`.
 
 `composer setup` runs the full first-time setup for you:
 
@@ -147,24 +179,31 @@ The API is now at `http://localhost:8000/api/v1` and the docs at `http://localho
 3. creates the SQLite database file
 4. migrates and seeds (imports the bundled `database/source/mh4u.db`)
 5. syncs game asset images (`php artisan mh4u:sync-assets`)
-6. generates the API docs (`php artisan scribe:generate`)
+6. exports the API docs + OpenAPI spec (`php artisan mh4u:export-docs`)
 
-`composer dev` runs the dev server and live log tail together.
+For a combined dev server + live log tail, use `composer dev` (also serves on
+port 8088).
 
-### Using MySQL instead
+### Optional: MySQL + Redis
 
-Edit `.env` before running setup:
+SQLite is the default and is recommended for local use. For MySQL/Redis parity,
+start the bundled services (an opt-in Compose profile; host ports 3307/6380 avoid
+colliding with any local instances):
+
+```bash
+docker compose --profile mysql up -d
+```
+
+Then point `.env` at it — `DB_HOST=mysql`, `DB_PORT=3306` from inside the Docker
+network, or `DB_HOST=127.0.0.1`, `DB_PORT=3307` from the host — and run
+`php artisan migrate --seed`:
 
 ```dotenv
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
 DB_DATABASE=mh4u_api
 DB_USERNAME=root
 DB_PASSWORD=secret
 ```
-
-then `php artisan migrate --seed`.
 
 ## Development
 
