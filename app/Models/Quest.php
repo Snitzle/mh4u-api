@@ -6,6 +6,7 @@ namespace App\Models;
 
 use App\Enums\QuestHub;
 use App\Enums\QuestType;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -66,5 +67,15 @@ class Quest extends BaseModel
     public function prerequisites(): BelongsToMany
     {
         return $this->belongsToMany(self::class, 'quest_prereqs', 'quest_id', 'prereq_id');
+    }
+
+    /**
+     * Quests in which the given monster appears.
+     *
+     * @param  Builder<Quest>  $query
+     */
+    public function scopeForMonster(Builder $query, int|string $monsterId): void
+    {
+        $query->whereHas('monsters', fn ($monsters) => $monsters->whereKey($monsterId));
     }
 }

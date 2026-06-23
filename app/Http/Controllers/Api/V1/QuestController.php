@@ -22,6 +22,14 @@ use Spatie\QueryBuilder\QueryBuilder;
  */
 class QuestController extends ApiController
 {
+    /**
+     * List quests.
+     *
+     * @queryParam filter[hub] string Filter by hub: Caravan, Guild or Event. Example: Guild
+     * @queryParam filter[stars] integer Filter by star rank (1-10). Example: 5
+     * @queryParam filter[monster] integer Only quests featuring this monster ID. Example: 24
+     * @queryParam sort string Sort by name or stars (prefix with - to reverse). Example: stars
+     */
     public function index(IndexRequest $request): AnonymousResourceCollection
     {
         $quests = QueryBuilder::for(Quest::class)
@@ -31,6 +39,7 @@ class QuestController extends ApiController
                 AllowedFilter::exact('stars'),
                 AllowedFilter::exact('location_id'),
                 AllowedFilter::partial('name'),
+                AllowedFilter::scope('monster', 'forMonster'),
             )
             ->allowedSorts('name', 'stars', 'id')
             ->defaultSort('stars')

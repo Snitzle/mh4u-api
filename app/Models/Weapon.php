@@ -89,4 +89,14 @@ class Weapon extends BaseModel
     {
         $query->where('final', true);
     }
+
+    /**
+     * Weapons of a given rarity (rarity lives on the shared item row).
+     *
+     * @param  Builder<Weapon>  $query
+     */
+    public function scopeOfRarity(Builder $query, int|string $rarity): void
+    {
+        $query->whereHas('item', fn ($item) => $item->where('rarity', $rarity));
+    }
 }

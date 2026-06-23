@@ -19,6 +19,14 @@ use Spatie\QueryBuilder\QueryBuilder;
  */
 class WeaponController extends ApiController
 {
+    /**
+     * List weapons.
+     *
+     * @queryParam filter[wtype] string Filter by weapon type. Example: Great Sword
+     * @queryParam filter[rarity] integer Filter by rarity (1-10). Example: 7
+     * @queryParam filter[element] string Filter by element. Example: Fire
+     * @queryParam sort string Sort by attack or tree_depth (prefix - to reverse). Example: -attack
+     */
     public function index(IndexRequest $request): AnonymousResourceCollection
     {
         $weapons = QueryBuilder::for(Weapon::class)
@@ -26,6 +34,7 @@ class WeaponController extends ApiController
                 AllowedFilter::exact('wtype'),
                 AllowedFilter::exact('element'),
                 AllowedFilter::exact('final'),
+                AllowedFilter::scope('rarity', 'ofRarity'),
             )
             ->allowedSorts('attack', 'tree_depth', 'id')
             ->defaultSort('id')

@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Enums\ArmorSlot;
 use App\Enums\Gender;
 use App\Enums\HunterType;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -62,5 +63,15 @@ class Armor extends BaseModel
     public function componentsRequired(): HasMany
     {
         return $this->hasMany(Component::class, 'created_item_id', 'id');
+    }
+
+    /**
+     * Armor of a given rarity (rarity lives on the shared item row).
+     *
+     * @param  Builder<Armor>  $query
+     */
+    public function scopeOfRarity(Builder $query, int|string $rarity): void
+    {
+        $query->whereHas('item', fn ($item) => $item->where('rarity', $rarity));
     }
 }

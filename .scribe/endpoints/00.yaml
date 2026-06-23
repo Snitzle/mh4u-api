@@ -98,7 +98,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: jp
+        example: it
         type: string
         enumValues:
           - en
@@ -114,7 +114,7 @@ endpoints:
       q: b
       types: architecto
       limit: 22
-      lang: jp
+      lang: it
     fileParameters: []
     responses:
       -

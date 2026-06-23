@@ -19,6 +19,14 @@ use Spatie\QueryBuilder\QueryBuilder;
  */
 class ArmorController extends ApiController
 {
+    /**
+     * List armor.
+     *
+     * @queryParam filter[slot] string Filter by slot: Head, Body, Arms, Waist, Legs. Example: Head
+     * @queryParam filter[rarity] integer Filter by rarity (1-10). Example: 7
+     * @queryParam filter[hunter_type] string Filter by hunter type: Blade, Gunner, Both. Example: Blade
+     * @queryParam sort string Sort by defense or max_defense (prefix - to reverse). Example: -defense
+     */
     public function index(IndexRequest $request): AnonymousResourceCollection
     {
         $armor = QueryBuilder::for(Armor::class)
@@ -26,6 +34,7 @@ class ArmorController extends ApiController
                 AllowedFilter::exact('slot'),
                 AllowedFilter::exact('hunter_type'),
                 AllowedFilter::exact('gender'),
+                AllowedFilter::scope('rarity', 'ofRarity'),
             )
             ->allowedSorts('defense', 'max_defense', 'id')
             ->defaultSort('id')

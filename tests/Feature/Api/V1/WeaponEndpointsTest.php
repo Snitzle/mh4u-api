@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Models\Item;
 use App\Models\Weapon;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -39,4 +40,16 @@ it('filters weapons by type', function (): void {
         ->assertOk()
         ->assertJsonCount(1, 'data')
         ->assertJsonPath('data.0.wtype', 'Long Sword');
+});
+
+it('filters weapons by rarity (via the shared item)', function (): void {
+    $rare = Item::factory()->create(['type' => 'Weapon', 'rarity' => 8]);
+    Weapon::factory()->create(['id' => $rare->id]);
+    $common = Item::factory()->create(['type' => 'Weapon', 'rarity' => 2]);
+    Weapon::factory()->create(['id' => $common->id]);
+
+    $this->getJson('/api/v1/weapons?filter[rarity]=8')
+        ->assertOk()
+        ->assertJsonCount(1, 'data')
+        ->assertJsonPath('data.0.rarity', 8);
 });

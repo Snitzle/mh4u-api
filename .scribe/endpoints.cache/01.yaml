@@ -66,7 +66,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: en
+        example: de
         type: string
         enumValues:
           - en
@@ -82,7 +82,7 @@ endpoints:
       per_page: 16
       page: 22
       sort: architecto
-      lang: en
+      lang: de
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
