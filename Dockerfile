@@ -1,24 +1,41 @@
 # syntax=docker/dockerfile:1
 
-# Local-development container for the MH4U Database API (Laravel 13 on PHP 8.4).
-#
-# The application code is bind-mounted at runtime (see docker-compose.yml), so
-# this image only provides the PHP runtime, the extensions Laravel + Composer
-# need, and Composer itself. First-run setup (install, migrate, seed, assets,
-# docs) and serving happen in docker-entrypoint.sh.
-FROM php:8.4-cli
+# Local-development container for the MH4U Database API (Laravel 13 on PHP 8.4),
+# served by Apache against a MySQL container. The application code is
+# bind-mounted at runtime (see docker-compose.yml); this image provides the PHP
+# runtime, extensions, Composer and the Apache vhost. First-run setup (install,
+# migrate, seed, assets) and serving happen in docker-entrypoint.sh.
+FROM php:8.4-apache
 
-# System libraries required to build the PHP extensions below.
+# System libraries for the PHP extensions + the mysql client (used by the
+# `mh4u:export-sql` dump command).
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         git \
         unzip \
+        default-mysql-client \
         libzip-dev \
         libicu-dev \
         libsqlite3-dev \
-    && docker-php-ext-install -j"$(nproc)" pdo_sqlite zip intl bcmath \
+    && docker-php-ext-install -j"$(nproc)" pdo_mysql pdo_sqlite zip intl bcmath \
+    && pecl install redis pcov \
+    && docker-php-ext-enable redis pcov \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Serve Laravel's public/ directory and honour its .htaccess rewrites.
+RUN { \
+        echo '<VirtualHost *:80>'; \
+        echo '    DocumentRoot /var/www/html/public'; \
+        echo '    <Directory /var/www/html/public>'; \
+        echo '        AllowOverride All'; \
+        echo '        Require all granted'; \
+        echo '    </Directory>'; \
+        echo '    ErrorLog ${APACHE_LOG_DIR}/error.log'; \
+        echo '    CustomLog ${APACHE_LOG_DIR}/access.log combined'; \
+        echo '</VirtualHost>'; \
+    } > /etc/apache2/sites-available/000-default.conf \
+    && a2enmod rewrite
 
 # Composer (pinned to v2) from the official image.
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
@@ -29,7 +46,7 @@ RUN chmod +x /usr/local/bin/mh4u-entrypoint
 
 WORKDIR /var/www/html
 
-# `php artisan serve` listens here; docker-compose maps it to the host.
-EXPOSE 8088
+# Apache listens on 80; docker-compose maps it to host 8088.
+EXPOSE 80
 
 ENTRYPOINT ["/usr/local/bin/mh4u-entrypoint"]

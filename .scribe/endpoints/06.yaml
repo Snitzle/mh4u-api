@@ -128,8 +128,8 @@ endpoints:
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json
-          x-ratelimit-limit: '100000'
-          x-ratelimit-remaining: '99996'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '45'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null
@@ -197,8 +197,8 @@ endpoints:
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json
-          x-ratelimit-limit: '100000'
-          x-ratelimit-remaining: '99996'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '44'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null
@@ -254,8 +254,8 @@ endpoints:
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json
-          x-ratelimit-limit: '100000'
-          x-ratelimit-remaining: '99996'
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '43'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null

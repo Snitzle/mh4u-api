@@ -142,28 +142,29 @@ cd mh4u-api
 docker compose up --build
 ```
 
-On first boot this builds a PHP 8.4 image, then (inside the container) installs
-dependencies, creates and seeds the SQLite database from the bundled
-`database/source/mh4u.db`, syncs the game image assets and exports the API docs —
-then serves the API. Later boots skip the seed and start in seconds.
+This starts three containers — **Apache + PHP 8.4** (`app`), **MySQL 8**
+(`mysql`), and **Redis** (`redis`, backing the cache + rate limiter). On first
+boot the `app` container installs dependencies, migrates and seeds MySQL from the
+bundled `database/source/mh4u.db`, syncs the game image assets and exports the
+API docs. Later boots skip the seed and start in seconds.
 
 - API:  **http://localhost:8088/api/v1**
 - Docs: **http://localhost:8088/docs**
 
-Stop with `Ctrl-C`, or `docker compose down` to remove the container. The repo is
-bind-mounted, so host edits are picked up live and `vendor/`, `.env` and the
-SQLite file persist between runs. Run any Artisan/Composer command in the
-container with `docker compose exec`:
+Stop with `Ctrl-C`, or `docker compose down` (add `-v` to also drop the MySQL
+data volume). The repo is bind-mounted, so host edits are live. Run any
+Artisan/Composer command in the container with `docker compose exec app`:
 
 ```bash
-docker compose exec api composer ci                        # lint + stan + tests
-docker compose exec api php artisan migrate:fresh --seed   # re-import data
+docker compose exec app composer ci                        # lint + stan + tests
+docker compose exec app php artisan migrate:fresh --seed   # rebuild the data
 ```
 
 ### Option B — Native PHP
 
 **Requirements:** PHP 8.3+ (8.4 recommended) and [Composer](https://getcomposer.org/).
-SQLite is the default, so no database server is needed.
+The committed `.env.example` targets the Docker MySQL, so for a no-server native
+run set `DB_CONNECTION=sqlite` in `.env` first (SQLite needs no database server).
 
 ```bash
 git clone https://github.com/Snitzle/mh4u-api.git
@@ -183,27 +184,6 @@ php artisan serve --port=8088
 
 For a combined dev server + live log tail, use `composer dev` (also serves on
 port 8088).
-
-### Optional: MySQL + Redis
-
-SQLite is the default and is recommended for local use. For MySQL/Redis parity,
-start the bundled services (an opt-in Compose profile; host ports 3307/6380 avoid
-colliding with any local instances):
-
-```bash
-docker compose --profile mysql up -d
-```
-
-Then point `.env` at it — `DB_HOST=mysql`, `DB_PORT=3306` from inside the Docker
-network, or `DB_HOST=127.0.0.1`, `DB_PORT=3307` from the host — and run
-`php artisan migrate --seed`:
-
-```dotenv
-DB_CONNECTION=mysql
-DB_DATABASE=mh4u_api
-DB_USERNAME=root
-DB_PASSWORD=secret
-```
 
 ## Development
 
