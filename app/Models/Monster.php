@@ -15,6 +15,36 @@ class Monster extends BaseModel
     protected $table = 'monsters';
 
     /**
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'base_hp' => 'integer',
+            'hp_mult_low' => 'float',
+            'hp_mult_high' => 'float',
+            'hp_mult_g' => 'float',
+            'crown_mini' => 'float',
+            'crown_large' => 'float',
+            'crown_king' => 'float',
+            'rage_duration' => 'integer',
+            'rage_mod_attack' => 'float',
+            'rage_mod_defense' => 'float',
+            'rage_mod_speed' => 'float',
+            'limp_low' => 'integer',
+            'limp_high' => 'integer',
+            'limp_high_apex' => 'integer',
+            'limp_g' => 'integer',
+            'limp_g_apex' => 'integer',
+            'cap_low' => 'integer',
+            'cap_high' => 'integer',
+            'cap_high_apex' => 'integer',
+            'cap_g' => 'integer',
+            'cap_g_apex' => 'integer',
+        ];
+    }
+
+    /**
      * @return array<string, mixed>
      */
     public function toSearchableArray(): array
@@ -70,5 +100,17 @@ class Monster extends BaseModel
     {
         return $this->belongsToMany(Quest::class, 'monster_quest')
             ->withPivot('unstable');
+    }
+
+    /** @return HasMany<MonsterStaggerLimit, $this> */
+    public function staggerLimits(): HasMany
+    {
+        return $this->hasMany(MonsterStaggerLimit::class)->orderBy('sort_order');
+    }
+
+    /** @return HasMany<MonsterTrapEffect, $this> */
+    public function trapEffects(): HasMany
+    {
+        return $this->hasMany(MonsterTrapEffect::class)->orderBy('sort_order');
     }
 }

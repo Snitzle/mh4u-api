@@ -98,7 +98,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: en
+        example: de
         type: string
         enumValues:
           - en
@@ -114,7 +114,7 @@ endpoints:
       q: b
       types: architecto
       limit: 22
-      lang: en
+      lang: de
     fileParameters: []
     responses:
       -
@@ -124,8 +124,8 @@ endpoints:
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json
-          x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-limit: '100000'
+          x-ratelimit-remaining: '99996'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null

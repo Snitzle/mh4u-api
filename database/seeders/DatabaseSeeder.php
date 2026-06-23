@@ -11,5 +11,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call(Mh4uImportSeeder::class);
+        $this->call(KiranicoTopUpSeeder::class);
     }
 }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use App\Models\Armor;
 use App\Models\Decoration;
+use App\Models\Monster;
 use App\Models\Weapon;
-use Database\Seeders\Mh4uImportSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 
@@ -26,6 +26,8 @@ function expectedRowCounts(): array
         'monster_weaknesses' => 112,
         'monster_habitats' => 147,
         'monster_statuses' => 784,
+        'monster_stagger_limits' => 840,
+        'monster_trap_effects' => 370,
         'items' => 7324,
         'weapons' => 2324,
         'armor' => 3087,
@@ -54,7 +56,8 @@ function expectedRowCounts(): array
 }
 
 beforeEach(function (): void {
-    $this->seed(Mh4uImportSeeder::class);
+    // DatabaseSeeder = Mh4uImportSeeder + KiranicoTopUpSeeder (the universal-gap top-up).
+    $this->seed();
 });
 
 test('every table imports the exact expected row count', function (): void {
@@ -91,8 +94,22 @@ test('foreign keys reference existing rows', function (): void {
 });
 
 test('the seeder is idempotent', function (): void {
-    $this->seed(Mh4uImportSeeder::class);
+    $this->seed();
 
     expect(DB::table('monsters')->count())->toBe(106)
-        ->and(DB::table('items')->count())->toBe(7324);
+        ->and(DB::table('items')->count())->toBe(7324)
+        ->and(DB::table('monster_stagger_limits')->count())->toBe(840)
+        ->and(DB::table('monster_trap_effects')->count())->toBe(370);
+});
+
+test('the Kiranico top-up populates the universal-gap fields', function (): void {
+    $rathalos = Monster::findOrFail(72);
+
+    expect($rathalos->base_hp)->toBe(4200)
+        ->and($rathalos->rage_duration)->toBe(80)
+        ->and($rathalos->cap_low)->toBe(23)
+        ->and($rathalos->crown_king)->toEqual(2104.9)
+        ->and($rathalos->ecology)->toContain('Kings of the Skies')
+        ->and($rathalos->staggerLimits()->where('region', 'Head')->value('value'))->toEqual(230)
+        ->and($rathalos->trapEffects()->where('trap', 'Pitfall Trap')->value('fatigued'))->toEqual(25);
 });

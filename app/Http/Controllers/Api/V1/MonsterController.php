@@ -52,6 +52,8 @@ class MonsterController extends ApiController
             'habitats.location',
             'huntingRewards.item',
             'quests',
+            'staggerLimits',
+            'trapEffects',
         ]);
 
         return MonsterResource::make($monster);
