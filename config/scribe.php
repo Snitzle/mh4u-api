@@ -11,10 +11,10 @@ use function Knuckles\Scribe\Config\removeStrategies;
 
 return [
     // The HTML <title> for the generated documentation.
-    'title' => config('app.name').' API Documentation',
+    'title' => config('app.name'),
 
     // A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
-    'description' => '',
+    'description' => 'A public, read-only REST API for the Monster Hunter 4 Ultimate game database: monsters, weapons, armor, items, quests, locations, skills and more. Responses are cached and rate-limited; pass ?lang=de|fr|es|it|jp to localize names.',
 
     // Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
     'intro_text' => <<<'INTRO'

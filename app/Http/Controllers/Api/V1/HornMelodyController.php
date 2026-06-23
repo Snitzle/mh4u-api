@@ -9,6 +9,11 @@ use App\Http\Resources\V1\HornMelodyResource;
 use App\Models\HornMelody;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
+/**
+ * @group Horn Melodies
+ *
+ * Hunting Horn note-combination songs and their effects.
+ */
 class HornMelodyController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection

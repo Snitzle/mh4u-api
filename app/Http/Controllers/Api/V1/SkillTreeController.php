@@ -12,6 +12,11 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Skill Trees
+ *
+ * Skill trees, their skills by point threshold, and the items that grant them.
+ */
 class SkillTreeController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection
@@ -26,6 +31,9 @@ class SkillTreeController extends ApiController
         return SkillTreeSummaryResource::collection($skillTrees);
     }
 
+    /**
+     * @urlParam skillTree integer required The skill tree ID. Example: 1
+     */
     public function show(SkillTree $skillTree): SkillTreeResource
     {
         $skillTree->load([

@@ -9,6 +9,11 @@ use App\Http\Resources\V1\WyporiumResource;
 use App\Models\Wyporium;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
+/**
+ * @group Wyporium
+ *
+ * Wyporium item-for-item trades and the quests that unlock them.
+ */
 class WyporiumController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection

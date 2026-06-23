@@ -12,6 +12,11 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Armor
+ *
+ * Armor pieces by slot, with defense, resistances and granted skills.
+ */
 class ArmorController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection
@@ -31,6 +36,9 @@ class ArmorController extends ApiController
         return ArmorSummaryResource::collection($armor);
     }
 
+    /**
+     * @urlParam armor integer required The armor ID. Example: 1914
+     */
     public function show(Armor $armor): ArmorResource
     {
         $armor->load([

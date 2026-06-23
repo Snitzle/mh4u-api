@@ -15,8 +15,16 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Monsters
+ *
+ * Large and small monsters, their weakness/damage charts, habitats and drops.
+ */
 class MonsterController extends ApiController
 {
+    /**
+     * List monsters.
+     */
     public function index(IndexRequest $request): AnonymousResourceCollection
     {
         $monsters = QueryBuilder::for(Monster::class)
@@ -29,6 +37,11 @@ class MonsterController extends ApiController
         return MonsterSummaryResource::collection($monsters);
     }
 
+    /**
+     * Get a monster with its damage, weaknesses, habitats, rewards and quests.
+     *
+     * @urlParam monster integer required The monster ID. Example: 1
+     */
     public function show(Monster $monster): MonsterResource
     {
         $monster->load([

@@ -19,9 +19,18 @@ use Illuminate\Http\JsonResponse;
  * Universal full-text search across monsters, equipment, items, quests,
  * locations and skill trees. Results are grouped by entity type, each hit
  * carrying enough to render and link to a detail page.
+ *
+ * @group Search
  */
 class SearchController extends ApiController
 {
+    /**
+     * Search the database.
+     *
+     * @queryParam q string required The search term. Example: tigrex
+     * @queryParam types string Comma-separated entity types to include (monsters, weapons, armor, decorations, items, quests, locations, skill_trees). Example: monsters,weapons
+     * @queryParam limit integer Max results per type (1-50). Example: 10
+     */
     public function __invoke(SearchRequest $request): JsonResponse
     {
         $query = (string) $request->validated('q');

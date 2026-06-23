@@ -12,6 +12,11 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Weapons
+ *
+ * All 14 weapon types, their stats and upgrade trees.
+ */
 class WeaponController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection
@@ -31,6 +36,9 @@ class WeaponController extends ApiController
         return WeaponSummaryResource::collection($weapons);
     }
 
+    /**
+     * @urlParam weapon integer required The weapon ID. Example: 5001
+     */
     public function show(Weapon $weapon): WeaponResource
     {
         $weapon->load([
@@ -50,6 +58,8 @@ class WeaponController extends ApiController
     /**
      * The full upgrade tree this weapon belongs to (root + all descendants),
      * ordered by depth.
+     *
+     * @urlParam weapon integer required The weapon ID. Example: 5001
      */
     public function tree(Weapon $weapon): AnonymousResourceCollection
     {

@@ -1,0 +1,173 @@
+name: Decorations
+description: |-
+
+  Decorations (jewels) and the skills they grant.
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/decorations
+    metadata:
+      custom: []
+      groupName: Decorations
+      groupDescription: |-
+
+        Decorations (jewels) and the skills they grant.
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Must be at least 1. Must not be greater than 100.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      page:
+        custom: []
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 22
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      sort:
+        custom: []
+        name: sort
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      lang:
+        custom: []
+        name: lang
+        description: ''
+        required: false
+        example: de
+        type: string
+        enumValues:
+          - en
+          - de
+          - fr
+          - es
+          - it
+          - jp
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      per_page: 1
+      page: 22
+      sort: architecto
+      lang: de
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 400
+        content: '{"error":{"status":400,"code":"bad_request","message":"Requested sort(s) `architecto` is not allowed. Allowed sort(s) are `num_slots, id`."}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+          access-control-expose-headers: ETag
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/decorations/{id}'
+    metadata:
+      custom: []
+      groupName: Decorations
+      groupDescription: |-
+
+        Decorations (jewels) and the skills they grant.
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        custom: []
+        name: id
+        description: 'The ID of the decoration.'
+        required: true
+        example: 1572
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      decoration:
+        custom: []
+        name: decoration
+        description: 'The decoration ID.'
+        required: true
+        example: 1572
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      id: 1572
+      decoration: 1572
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":1572,"name":{"en":"Antidote Jewel 1","de":"GegengiftJwl1","fr":"Joyau Poison 1","es":"Joya ant\u00eddoto 1","it":"G veleno 1","jp":"\u8010\u6bd2\u73e0\u3010\uff11\u3011"},"rarity":4,"num_slots":1,"buy":null,"sell":40,"description":{"en":"","de":null,"fr":null,"es":null,"it":null,"jp":null},"icon_url":"http:\/\/localhost\/assets\/items\/Jewel-Purple.png","skill_trees":[{"id":118,"name":{"en":"Poison","de":"Gift","fr":"Poison","es":"Veneno","it":"Veleno","jp":"\u6bd2"},"points":1},{"id":121,"name":{"en":"Stun","de":"Bet\u00e4uben","fr":"Volont\u00e9","es":"Aturdir","it":"Stordim.","jp":"\u6c17\u7d76"},"points":-1}]}}'
+        headers:
+          cache-control: 'max-age=86400, public'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+          access-control-expose-headers: ETag
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

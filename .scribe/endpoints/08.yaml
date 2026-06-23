@@ -1,0 +1,173 @@
+name: 'Skill Trees'
+description: |-
+
+  Skill trees, their skills by point threshold, and the items that grant them.
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/skill-trees
+    metadata:
+      custom: []
+      groupName: 'Skill Trees'
+      groupDescription: |-
+
+        Skill trees, their skills by point threshold, and the items that grant them.
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Must be at least 1. Must not be greater than 100.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      page:
+        custom: []
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 22
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      sort:
+        custom: []
+        name: sort
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      lang:
+        custom: []
+        name: lang
+        description: ''
+        required: false
+        example: it
+        type: string
+        enumValues:
+          - en
+          - de
+          - fr
+          - es
+          - it
+          - jp
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      per_page: 1
+      page: 22
+      sort: architecto
+      lang: it
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 400
+        content: '{"error":{"status":400,"code":"bad_request","message":"Requested sort(s) `architecto` is not allowed. Allowed sort(s) are `name, id`."}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+          access-control-expose-headers: ETag
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/v1/skill-trees/{skillTree_id}'
+    metadata:
+      custom: []
+      groupName: 'Skill Trees'
+      groupDescription: |-
+
+        Skill trees, their skills by point threshold, and the items that grant them.
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      skillTree_id:
+        custom: []
+        name: skillTree_id
+        description: 'The ID of the skillTree.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      skillTree:
+        custom: []
+        name: skillTree
+        description: 'The skill tree ID.'
+        required: true
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      skillTree_id: 1
+      skillTree: 1
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":{"id":1,"name":{"en":"Torso Up","de":"RumpfVerst","fr":"Torse +","es":"Torso+","it":"Torso+","jp":"\u80f4\u7cfb\u7d71\u500d\u52a0"},"skills":[{"id":1,"name":{"en":"Torso Up","de":"RumpfVerst","fr":"Torse +","es":"Torso+","it":"Torso+","jp":"\u80f4\u7cfb\u7d71\u500d\u52a0"},"required_skill_tree_points":1,"description":{"en":"","de":"","fr":"","es":"","it":"","jp":"\u80f4\u30d1\u30fc\u30c4\u306e\u30b9\u30ad\u30eb\u30dd\u30a4\u30f3\u30c8\u304c2\u500d\u306b\u306a\u308b"}}],"items":[{"id":1953,"name":{"en":"Alloy Greaves","de":"LegierungsBeinschien","fr":"Gr\u00e8ves en alliage","es":"Grebas de aleaci\u00f3n","it":"Schinieri in lega","jp":"\u30a2\u30ed\u30a4\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":1958,"name":{"en":"Alloy Leggings","de":"Legierungs-Gamaschen","fr":"Cuissard en alliage","es":"Calzas de aleaci\u00f3n","it":"Gambali in lega","jp":"\u30a2\u30ed\u30a4\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":1993,"name":{"en":"Remobra Belt","de":"Remobra-G\u00fcrtel","fr":"Ceinture Remobra","es":"Cintur\u00f3n de Remobra","it":"Cintura Remobra","jp":"\u30ac\u30d6\u30e9\u30b9\u30fc\u30c4\u30d9\u30eb\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":1998,"name":{"en":"Remobra Band","de":"Remobra-Band","fr":"Pochette Remobra","es":"Banda de Remobra","it":"Fascia Remobra","jp":"\u30ac\u30d6\u30e9\u30b9\u30fc\u30c4\u30d0\u30f3\u30c9"},"type":"Armor","icon_url":null,"points":1},{"id":2024,"name":{"en":"Ioprey Greaves","de":"Ioprey-Beinschienen","fr":"Gr\u00e8ves Ioprey","es":"Grebas de Ioprey","it":"Schinieri Ioprey","jp":"\u30a4\u30fc\u30aa\u30b9\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2029,"name":{"en":"Ioprey Leggings","de":"Ioprey-Gamaschen","fr":"Cuissard Ioprey","es":"Calzas de Ioprey","it":"Gambali Ioprey","jp":"\u30a4\u30fc\u30aa\u30b9\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2074,"name":{"en":"Tetsucabra Greaves","de":"TetsucabraBeinschien","fr":"Gr\u00e8ves Tetsucabra","es":"Grebas de Tetsucabra","it":"Schinieri Tetsucabra","jp":"\u30ab\u30d6\u30e9\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2079,"name":{"en":"Tetsucabra Leggings","de":"Tetsucabra-Gamaschen","fr":"Cuissard Tetsucabra","es":"Calzas de Tetsucabra","it":"Gambali Tetsucabra","jp":"\u30ab\u30d6\u30e9\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2164,"name":{"en":"Arzuros Greaves","de":"Arzuros-Beinschienen","fr":"Gr\u00e8ves Arzuros","es":"Grebas de Arzuros","it":"Schinieri Arzuros","jp":"\u30a2\u30b7\u30e9\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2169,"name":{"en":"Arzuros Leggings","de":"Arzuros-Gamaschen","fr":"Cuissard Arzuros","es":"Calzas de Arzuros","it":"Gambali Arzuros","jp":"\u30a2\u30b7\u30e9\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2374,"name":{"en":"Uragaan Greaves","de":"Uragaan-Beinschienen","fr":"Gr\u00e8ves Uragaan","es":"Grebas de Uragaan","it":"Schinieri Uragaan","jp":"\u30ac\u30f3\u30ad\u30f3\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2379,"name":{"en":"Uragaan Leggings","de":"Uragaan-Gamaschen","fr":"Cuissard Uragaan","es":"Calzas de Uragaan","it":"Gambali Uragaan","jp":"\u30ac\u30f3\u30ad\u30f3\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2479,"name":{"en":"Remobra Belt S","de":"Remobra-G\u00fcrtel S","fr":"Ceinture Remobra S","es":"Cintur\u00f3n Remobra S","it":"Cintura Remobra S","jp":"\u30ac\u30d6\u30e9\u30b9\u30fc\u30c4\uff33\u30d9\u30eb\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":2484,"name":{"en":"Remobra Band S","de":"Remobra-Band S","fr":"Pochette Remobra S","es":"Banda de Remobra S","it":"Fascia Remobra S","jp":"\u30ac\u30d6\u30e9\u30b9\u30fc\u30c4\uff33\u30d0\u30f3\u30c9"},"type":"Armor","icon_url":null,"points":1},{"id":2550,"name":{"en":"Velociprey Greaves S","de":"VelocipreyBeinschinS","fr":"Gr\u00e8ves Velociprey S","es":"Grebas Velociprey S","it":"Schin. Velociprey S","jp":"\u30e9\u30f3\u30dd\u30b9\uff33\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2555,"name":{"en":"Velociprey Leggings S","de":"VelocipreyGamaschenS","fr":"Cuissard Velociprey S","es":"Calzas Velociprey S","it":"Gambali Velociprey S","jp":"\u30e9\u30f3\u30dd\u30b9\uff33\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2590,"name":{"en":"Volvidon Greaves","de":"VolvidonBeinschienen","fr":"Gr\u00e8ves Volvidon","es":"Grebas de Volvidon","it":"Schinieri Volvidon","jp":"\u30e9\u30f3\u30b0\u30ed\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2595,"name":{"en":"Volvidon Leggings","de":"Volvidon-Gamaschen","fr":"Cuissard Volvidon","es":"Calzas de Volvidon","it":"Gambali Volvidon","jp":"\u30e9\u30f3\u30b0\u30ed\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2678,"name":{"en":"Alloy Greaves S","de":"LegierungsBeinschinS","fr":"Gr\u00e8ves en alliage S","es":"Grebas de aleaci\u00f3n S","it":"Schinieri in lega S","jp":"\u30a2\u30ed\u30a4\uff33\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2683,"name":{"en":"Alloy Leggings S","de":"LegierungsGamaschenS","fr":"Cuissard alliage S","es":"Calzas de aleaci\u00f3n S","it":"Gambali in lega S","jp":"\u30a2\u30ed\u30a4\uff33\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2684,"name":{"en":"Chrome Metal Coil","de":"Chrom-H\u00fcftring","fr":"Boucle Chrome","es":"Faja metal cromado","it":"Spira cromata","jp":"\u30af\u30ed\u30e0\u30e1\u30bf\u30eb\u30b3\u30a4\u30eb"},"type":"Armor","icon_url":null,"points":1},{"id":2685,"name":{"en":"Chrome Metal Boots","de":"Chrom-Stiefel","fr":"Bottes Chrome","es":"Botas metal cromado","it":"Stivali cromati","jp":"\u30af\u30ed\u30e0\u30e1\u30bf\u30eb\u30d6\u30fc\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":2686,"name":{"en":"Chrome Metal Coat","de":"Chrom-Waffenrock","fr":"Taille Chrome","es":"Cota metal cromado","it":"Fiancale cromato","jp":"\u30af\u30ed\u30e0\u30e1\u30bf\u30eb\u30b3\u30fc\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":2687,"name":{"en":"Chrome Metal Feet","de":"Chrom-F\u00fc\u00dfe","fr":"Chaussures Chrome","es":"Pezu\u00f1. metal cromado","it":"Piedi cromati","jp":"\u30af\u30ed\u30e0\u30e1\u30bf\u30eb\u30d5\u30c3\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":2752,"name":{"en":"Guild Bard Boots","de":"Gildenbarden-Stiefel","fr":"Bottes de barde","es":"Botas bardo gremio","it":"Stivali bardo","jp":"\u30ae\u30eb\u30c9\u30d0\u30fc\u30c9\u30d6\u30fc\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":2757,"name":{"en":"Guild Bard Gaiters","de":"Gildenbarden-Stulpen","fr":"Gu\u00eatres de barde","es":"Polainas bardo grem.","it":"Ghette bardo","jp":"\u30ae\u30eb\u30c9\u30d0\u30fc\u30c9\u30d5\u30c3\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":2762,"name":{"en":"Scholar''s Socks","de":"Gelehrten-Socken","fr":"Chaussettes de clerc","es":"Calcetines colegiala","it":"Calze Gilda","jp":"\u30b9\u30ab\u30e9\u30fc\u30bd\u30c3\u30af\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2767,"name":{"en":"Scholar''s Sandals","de":"Gelehrten-Sandalen","fr":"Sandales de clerc","es":"Sandalias colegiala","it":"Sandali Gilda","jp":"\u30b9\u30ab\u30e9\u30fc\u30b5\u30f3\u30c0\u30eb"},"type":"Armor","icon_url":null,"points":1},{"id":2802,"name":{"en":"Tetsucabra Greaves S","de":"TetsucabraBeinschinS","fr":"Gr\u00e8ves Tetsucabra S","es":"Grebas Tetsucabra S","it":"Schin. Tetsucabra S","jp":"\u30ab\u30d6\u30e9\uff33\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":2807,"name":{"en":"Tetsucabra Leggings S","de":"TetsucabraGamaschenS","fr":"Cuissard Tetsucabra S","es":"Calzas Tetsucabra S","it":"Gambali Tetsucabra S","jp":"\u30ab\u30d6\u30e9\uff33\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":2978,"name":{"en":"Skull Visage","de":"Sch\u00e4del-Antlitz","fr":"T\u00eate de mort","es":"Rostro cadav\u00e9rico","it":"Viso di teschio","jp":"\u30b9\u30ab\u30eb\u30d8\u30c3\u30c9"},"type":"Armor","icon_url":null,"points":1},{"id":2979,"name":{"en":"Skull Mask","de":"Totensch\u00e4del","fr":"Visage de mort","es":"M\u00e1scara de calavera","it":"Faccia di teschio","jp":"\u30b9\u30ab\u30eb\u30d5\u30a7\u30a4\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":3126,"name":{"en":"Vangis Coil","de":"Vangis-H\u00fcftring","fr":"Boucle Vangis","es":"Faja de Vangis","it":"Spira Vangis","jp":"\u30d0\u30f3\u30ae\u30b9\u30b3\u30a4\u30eb"},"type":"Armor","icon_url":null,"points":1},{"id":3131,"name":{"en":"Vangis Coat","de":"Vangis-Waffenrock","fr":"Taille Vangis","es":"Cota de Vangis","it":"Fiancale Vangis","jp":"\u30d0\u30f3\u30ae\u30b9\u30b3\u30fc\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":3207,"name":{"en":"Guild Knight Boots","de":"Gildenritter-Stiefel","fr":"Bottes Chevalier","es":"Botas caball. gremio","it":"Stivali cav. Gilda","jp":"\u30ae\u30eb\u30c9\u30ca\u30a4\u30c8\u30d6\u30fc\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":3212,"name":{"en":"Guild Knight Tights","de":"Gildenritter-Trikot","fr":"Collant Chevalier","es":"Leotardo cab. gremio","it":"Calzam. cav. Gilda","jp":"\u30ae\u30eb\u30c9\u30ca\u30a4\u30c8\u30bf\u30a4\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":3217,"name":{"en":"Maiden''s Socks","de":"Magd-Socken","fr":"Chaussettes soubrette","es":"Calcetines doncella","it":"Calze damigella","jp":"\u30e1\u30a4\u30c9\u30bd\u30c3\u30af\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":3222,"name":{"en":"Maiden''s Tights","de":"Magd-Strumpfhose","fr":"Collant de soubrette","es":"Leotardos doncella","it":"Calzam. damigella","jp":"\u30e1\u30a4\u30c9\u30bf\u30a4\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":3243,"name":{"en":"Black Belt Helm","de":"Schwarzgurt-Helm","fr":"Heaume obi noir","es":"Casco cintur\u00f3n negro","it":"Elmo cintura nera","jp":"\u30af\u30ed\u30aa\u30d3\u30d8\u30eb\u30e0"},"type":"Armor","icon_url":null,"points":1},{"id":3245,"name":{"en":"Black Belt Vambraces","de":"SchwarzgurtArmschien","fr":"Avant-bras obi noir","es":"Brazales cint. negro","it":"Parabr. cintura nera","jp":"\u30af\u30ed\u30aa\u30d3\u30a2\u30fc\u30e0"},"type":"Armor","icon_url":null,"points":1},{"id":3248,"name":{"en":"Black Belt Cap","de":"Schwarzgurt-Kappe","fr":"Calot obi noir","es":"Gorro cintur\u00f3n negro","it":"Capp. cintura nera","jp":"\u30af\u30ed\u30aa\u30d3\u30ad\u30e3\u30c3\u30d7"},"type":"Armor","icon_url":null,"points":1},{"id":3250,"name":{"en":"Black Belt Guards","de":"SchwarzgurtArmschutz","fr":"Gardes obi noir","es":"Guardab. cint. negro","it":"Protez. cintura nera","jp":"\u30af\u30ed\u30aa\u30d3\u30ac\u30fc\u30c9"},"type":"Armor","icon_url":null,"points":1},{"id":3257,"name":{"en":"Sailor Socks","de":"Matrosen-Socken","fr":"Chaussettes de marin","es":"Calcetines marineros","it":"Calze marinaretta","jp":"\u30bb\u30a4\u30e9\u30fc\u30bd\u30c3\u30af\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":3262,"name":{"en":"Sailor Sandals","de":"Matrosen-Sandalen","fr":"Sandales de marin","es":"Sandalias marineras","it":"Sandali marinaretta","jp":"\u30bb\u30a4\u30e9\u30fc\u30b5\u30f3\u30c0\u30eb"},"type":"Armor","icon_url":null,"points":1},{"id":3389,"name":{"en":"Esurient Faulds","de":"Gier-Beinzeug","fr":"Tassette Voracit\u00e9","es":"Muslera voraz","it":"Falda vorace","jp":"\u30b0\u30ea\u30fc\u30c9\u30d5\u30a9\u30fc\u30eb\u30c9"},"type":"Armor","icon_url":null,"points":1},{"id":3394,"name":{"en":"Esurient Coat","de":"Gier-Waffenrock","fr":"Taille Voracit\u00e9","es":"Cota voraz","it":"Fiancale vorace","jp":"\u30b0\u30ea\u30fc\u30c9\u30b3\u30fc\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":3631,"name":{"en":"\u4f1d\u8aac\uff2a\u30cf\u30c3\u30c8","de":"\u4f1d\u8aac\uff2a\u30cf\u30c3\u30c8","fr":"\u4f1d\u8aac\uff2a\u30cf\u30c3\u30c8","es":"\u4f1d\u8aac\uff2a\u30cf\u30c3\u30c8","it":"\u4f1d\u8aac\uff2a\u30cf\u30c3\u30c8","jp":"\u4f1d\u8aac\uff2a\u30cf\u30c3\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":3633,"name":{"en":"\u4f1d\u8aac\uff2a\u30b0\u30e9\u30d6","de":"\u4f1d\u8aac\uff2a\u30b0\u30e9\u30d6","fr":"\u4f1d\u8aac\uff2a\u30b0\u30e9\u30d6","es":"\u4f1d\u8aac\uff2a\u30b0\u30e9\u30d6","it":"\u4f1d\u8aac\uff2a\u30b0\u30e9\u30d6","jp":"\u4f1d\u8aac\uff2a\u30b0\u30e9\u30d6"},"type":"Armor","icon_url":null,"points":1},{"id":3636,"name":{"en":"\u4f1d\u8aac\uff2a\u30ed\u30b8\u30e3\u30fc","de":"\u4f1d\u8aac\uff2a\u30ed\u30b8\u30e3\u30fc","fr":"\u4f1d\u8aac\uff2a\u30ed\u30b8\u30e3\u30fc","es":"\u4f1d\u8aac\uff2a\u30ed\u30b8\u30e3\u30fc","it":"\u4f1d\u8aac\uff2a\u30ed\u30b8\u30e3\u30fc","jp":"\u4f1d\u8aac\uff2a\u30ed\u30b8\u30e3\u30fc"},"type":"Armor","icon_url":null,"points":1},{"id":3638,"name":{"en":"\u4f1d\u8aac\uff2a\u30ab\u30d5\u30b9","de":"\u4f1d\u8aac\uff2a\u30ab\u30d5\u30b9","fr":"\u4f1d\u8aac\uff2a\u30ab\u30d5\u30b9","es":"\u4f1d\u8aac\uff2a\u30ab\u30d5\u30b9","it":"\u4f1d\u8aac\uff2a\u30ab\u30d5\u30b9","jp":"\u4f1d\u8aac\uff2a\u30ab\u30d5\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":3669,"name":{"en":"\u30be\u30c7\u30a3\u30a2\u30b9\u30a2\u30fc\u30e0","de":"\u30be\u30c7\u30a3\u30a2\u30b9\u30a2\u30fc\u30e0","fr":"\u30be\u30c7\u30a3\u30a2\u30b9\u30a2\u30fc\u30e0","es":"\u30be\u30c7\u30a3\u30a2\u30b9\u30a2\u30fc\u30e0","it":"\u30be\u30c7\u30a3\u30a2\u30b9\u30a2\u30fc\u30e0","jp":"\u30be\u30c7\u30a3\u30a2\u30b9\u30a2\u30fc\u30e0"},"type":"Armor","icon_url":null,"points":1},{"id":3670,"name":{"en":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30a4\u30eb","de":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30a4\u30eb","fr":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30a4\u30eb","es":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30a4\u30eb","it":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30a4\u30eb","jp":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30a4\u30eb"},"type":"Armor","icon_url":null,"points":1},{"id":3674,"name":{"en":"\u30be\u30c7\u30a3\u30a2\u30b9\u30ac\u30fc\u30c9","de":"\u30be\u30c7\u30a3\u30a2\u30b9\u30ac\u30fc\u30c9","fr":"\u30be\u30c7\u30a3\u30a2\u30b9\u30ac\u30fc\u30c9","es":"\u30be\u30c7\u30a3\u30a2\u30b9\u30ac\u30fc\u30c9","it":"\u30be\u30c7\u30a3\u30a2\u30b9\u30ac\u30fc\u30c9","jp":"\u30be\u30c7\u30a3\u30a2\u30b9\u30ac\u30fc\u30c9"},"type":"Armor","icon_url":null,"points":1},{"id":3675,"name":{"en":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30fc\u30c8","de":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30fc\u30c8","fr":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30fc\u30c8","es":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30fc\u30c8","it":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30fc\u30c8","jp":"\u30be\u30c7\u30a3\u30a2\u30b9\u30b3\u30fc\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":3894,"name":{"en":"Tetsucabra Greaves X","de":"TetsucabraBeinschinX","fr":"Gr\u00e8ves Tetsucabra X","es":"Grebas Tetsucabra X","it":"Schinieri Tetsucabra X","jp":"\u30ab\u30d6\u30e9\uff38\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":3899,"name":{"en":"Tetsucabra Leggings X","de":"TetsucabraGamaschenX","fr":"Cuissard Tetsucabra X","es":"Calzas Tetsucabra X","it":"Gambali Tetsucabra X","jp":"\u30ab\u30d6\u30e9\uff38\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":4004,"name":{"en":"Velociprey Greaves X","de":"VelocipreyBeinschinX","fr":"Gr\u00e8ves Velociprey X","es":"Grebas Velociprey X","it":"Schinieri Velociprey X","jp":"\u30e9\u30f3\u30dd\u30b9\uff38\u30b0\u30ea\u30fc\u30f4"},"type":"Armor","icon_url":null,"points":1},{"id":4009,"name":{"en":"Velociprey Leggings X","de":"VelocipreyGamaschenX","fr":"Cuissard Velociprey X","es":"Calzas Velociprey X","it":"Gambali Velociprey X","jp":"\u30e9\u30f3\u30dd\u30b9\uff38\u30ec\u30ae\u30f3\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":4341,"name":{"en":"Vangis Coil X","de":"Vangis-H\u00fcftring X","fr":"Boucle Vangis X","es":"Faja de Vangis X","it":"Spira Vangis X","jp":"\u30d0\u30f3\u30ae\u30b9\uff38\u30b3\u30a4\u30eb"},"type":"Armor","icon_url":null,"points":1},{"id":4346,"name":{"en":"Vangis Coat X","de":"Vangis-Waffenrock X","fr":"Taille Vangis X","es":"Cota de Vangis X","it":"Fiancale Vangis X","jp":"\u30d0\u30f3\u30ae\u30b9\uff38\u30b3\u30fc\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":4522,"name":{"en":"G. Knight Boots X","de":"GildenritterStiefel X","fr":"Bottes Chevalier X","es":"Botas g. caballero X","it":"Stivali cav. Gilda X","jp":"\uff27\u30fb\u30ca\u30a4\u30c8\uff38\u30d6\u30fc\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":4527,"name":{"en":"G. Knight Tights X","de":"Gildenritter-Trikot X","fr":"Collant Chevalier X","es":"Leotard. g. caball. X","it":"Calzam. cav. Gilda X","jp":"\uff27\u30fb\u30ca\u30a4\u30c8\uff38\u30bf\u30a4\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":4532,"name":{"en":"Maiden''s Socks X","de":"Magd-Socken X","fr":"Chauss. de soubrette X","es":"Calcetines doncella X","it":"Calze damigella X","jp":"\u30e1\u30a4\u30c9\uff38\u30bd\u30c3\u30af\u30b9"},"type":"Armor","icon_url":null,"points":1},{"id":4537,"name":{"en":"Exclusive Tights X","de":"ExklusiveStrumpfhoseX","fr":"Collant personel X","es":"Leotard. exclusivos X","it":"Calzam. firmata X","jp":"\u30d7\u30e9\u30a4\u30d9\u30fc\u30c8\uff38\u30bf\u30a4\u30c4"},"type":"Armor","icon_url":null,"points":1},{"id":4686,"name":{"en":"Esurient Faulds Z","de":"Gier-Beinzeug Z","fr":"Tassette Voracit\u00e9 Z","es":"Muslera voraz Z","it":"Falda vorace Z","jp":"\u30b0\u30ea\u30fc\u30c9\uff3a\u30d5\u30a9\u30fc\u30eb\u30c9"},"type":"Armor","icon_url":null,"points":1},{"id":4691,"name":{"en":"Esurient Coat Z","de":"Gier-Waffenrock Z","fr":"Taille Voracit\u00e9 Z","es":"Cota voraz Z","it":"Fiancale vorace Z","jp":"\u30b0\u30ea\u30fc\u30c9\uff3a\u30b3\u30fc\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":4865,"name":{"en":"Helm of Rage","de":"Helm der Wut","fr":"Heaume h\u00e9r\u00e9tique","es":"Yelmo de ira","it":"Elmo rabbia","jp":"\u53cd\u9006\u738b\uff2a\u30cf\u30c3\u30c8"},"type":"Armor","icon_url":null,"points":1},{"id":4867,"name":{"en":"Braces of Rage","de":"Armschienen der Wut","fr":"Avant-bras h\u00e9r\u00e9tiques","es":"Brazales de ira","it":"Parabraccia rabbia","jp":"\u53cd\u9006\u738b\uff2a\u30b0\u30e9\u30d6"},"type":"Armor","icon_url":null,"points":1},{"id":4870,"name":{"en":"Cap of Rage","de":"Kappe der Wut","fr":"Calot h\u00e9r\u00e9tique","es":"Gorro de ira","it":"Cappello rabbia","jp":"\u53cd\u9006\u738b\uff2a\u30ed\u30b8\u30e3\u30fc"},"type":"Armor","icon_url":null,"points":1},{"id":4872,"name":{"en":"Guards of Rage","de":"Armschutz der Wut","fr":"Gardes h\u00e9r\u00e9tiques","es":"Def. piernas de ira","it":"Protezioni rabbia","jp":"\u53cd\u9006\u738b\uff2a\u30ab\u30d5\u30b9"},"type":"Armor","icon_url":null,"points":1}]}}'
+        headers:
+          cache-control: 'max-age=86400, public'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+          access-control-expose-headers: ETag
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

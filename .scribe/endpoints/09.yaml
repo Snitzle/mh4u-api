@@ -1,0 +1,104 @@
+name: Wyporium
+description: |-
+
+  Wyporium item-for-item trades and the quests that unlock them.
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/v1/wyporium
+    metadata:
+      custom: []
+      groupName: Wyporium
+      groupDescription: |-
+
+        Wyporium item-for-item trades and the quests that unlock them.
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Must be at least 1. Must not be greater than 100.'
+        required: false
+        example: 1
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      page:
+        custom: []
+        name: page
+        description: 'Must be at least 1.'
+        required: false
+        example: 22
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      sort:
+        custom: []
+        name: sort
+        description: ''
+        required: false
+        example: architecto
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      lang:
+        custom: []
+        name: lang
+        description: ''
+        required: false
+        example: jp
+        type: string
+        enumValues:
+          - en
+          - de
+          - fr
+          - es
+          - it
+          - jp
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      per_page: 1
+      page: 22
+      sort: architecto
+      lang: jp
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"data":[{"id":22,"item_in":{"id":1115,"name":"\u89d2\u7adc\u306e\u7532\u6bbb","type":"Flesh","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost\/assets\/items\/Shell-Gold.png"},"item_out":{"id":770,"name":"\u7815\u7adc\u306e\u7532\u6bbb","type":"Flesh","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost\/assets\/items\/Shell-Blue.png"},"unlock_quest":{"id":95,"name":"Advanced: Dragon''s Din","hub":"Caravan","type":"Normal","stars":6}}],"links":{"first":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=1","last":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=128","prev":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=21","next":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=23"},"meta":{"current_page":22,"from":22,"last_page":128,"links":[{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=21","label":"&laquo; Previous","page":21,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=1","label":"1","page":1,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=2","label":"2","page":2,"active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=19","label":"19","page":19,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=20","label":"20","page":20,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=21","label":"21","page":21,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=22","label":"22","page":22,"active":true},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=23","label":"23","page":23,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=24","label":"24","page":24,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=25","label":"25","page":25,"active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=127","label":"127","page":127,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=128","label":"128","page":128,"active":false},{"url":"http:\/\/localhost\/api\/v1\/wyporium?per_page=1&sort=architecto&lang=jp&page=23","label":"Next &raquo;","page":23,"active":false}],"path":"http:\/\/localhost\/api\/v1\/wyporium","per_page":1,"to":22,"total":128}}'
+        headers:
+          cache-control: 'max-age=86400, public'
+          content-type: application/json
+          x-ratelimit-limit: '60'
+          x-ratelimit-remaining: '59'
+          access-control-allow-origin: '*'
+          access-control-expose-headers: ETag
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

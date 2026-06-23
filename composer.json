@@ -45,7 +45,9 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
             "@php artisan key:generate",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate --force --seed"
+            "@php artisan migrate --force --seed",
+            "@php artisan mh4u:sync-assets",
+            "@php artisan scribe:generate"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",

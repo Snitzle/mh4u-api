@@ -12,6 +12,11 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Decorations
+ *
+ * Decorations (jewels) and the skills they grant.
+ */
 class DecorationController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection
@@ -27,6 +32,9 @@ class DecorationController extends ApiController
         return DecorationSummaryResource::collection($decorations);
     }
 
+    /**
+     * @urlParam decoration integer required The decoration ID. Example: 1572
+     */
     public function show(Decoration $decoration): DecorationResource
     {
         $decoration->load(['item', 'skillTrees']);

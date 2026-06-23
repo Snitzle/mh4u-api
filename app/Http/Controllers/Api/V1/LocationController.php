@@ -14,6 +14,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Locations
+ *
+ * Hunting locations, the monsters found there and gatherable items by rank.
+ */
 class LocationController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection
@@ -27,6 +32,9 @@ class LocationController extends ApiController
         return LocationSummaryResource::collection($locations);
     }
 
+    /**
+     * @urlParam location integer required The location ID. Example: 1
+     */
     public function show(Location $location): LocationResource
     {
         $location->load([

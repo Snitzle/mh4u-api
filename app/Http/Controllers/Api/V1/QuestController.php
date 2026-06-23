@@ -15,6 +15,11 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Quests
+ *
+ * Caravan, Guild and Event quests with their monsters, rewards and prerequisites.
+ */
 class QuestController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection
@@ -35,6 +40,9 @@ class QuestController extends ApiController
         return QuestSummaryResource::collection($quests);
     }
 
+    /**
+     * @urlParam quest integer required The quest ID. Example: 1
+     */
     public function show(Quest $quest): QuestResource
     {
         $quest->load([

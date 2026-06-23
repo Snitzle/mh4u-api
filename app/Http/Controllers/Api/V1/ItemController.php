@@ -13,6 +13,12 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
+/**
+ * @group Items
+ *
+ * Every item: materials, consumables and the base records for equipment.
+ * Item detail includes where to get it and what it crafts into.
+ */
 class ItemController extends ApiController
 {
     public function index(IndexRequest $request): AnonymousResourceCollection
@@ -32,6 +38,9 @@ class ItemController extends ApiController
         return ItemSummaryResource::collection($items);
     }
 
+    /**
+     * @urlParam item integer required The item ID. Example: 1
+     */
     public function show(Item $item): ItemResource
     {
         $item->load([
