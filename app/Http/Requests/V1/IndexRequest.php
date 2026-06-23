@@ -24,7 +24,9 @@ class IndexRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'per_page' => ['integer', 'min:1', 'max:100'],
+            // Upper bound is clamped (not rejected) by the controller; only
+            // guard against nonsensical values here.
+            'per_page' => ['integer', 'min:1'],
             'page' => ['integer', 'min:1'],
             'sort' => ['string'],
             'lang' => ['string', Rule::in(Language::values())],
