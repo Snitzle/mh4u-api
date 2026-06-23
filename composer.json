@@ -47,7 +47,10 @@
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --force --seed",
             "@php artisan mh4u:sync-assets",
-            "@php artisan scribe:generate"
+            "@php artisan mh4u:export-docs"
+        ],
+        "docs": [
+            "@php artisan mh4u:export-docs"
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",

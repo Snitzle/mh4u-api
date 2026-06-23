@@ -164,6 +164,13 @@ return [
 
         'overrides' => [
             // 'info.version' => '2.0.0',
+
+            // Base URL that Bruno / Postman send requests to after importing the
+            // spec. Paths already include the /api/v1 prefix, so this is host-only.
+            // Add or swap in a production server entry here as needed.
+            'servers' => [
+                ['url' => 'http://localhost:8000', 'description' => 'Local development server (php artisan serve)'],
+            ],
         ],
 
         // Additional generators to use when generating the OpenAPI spec.

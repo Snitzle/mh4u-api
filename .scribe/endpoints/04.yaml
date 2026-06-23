@@ -29,9 +29,9 @@ endpoints:
       per_page:
         custom: []
         name: per_page
-        description: 'Must be at least 1. Must not be greater than 100.'
+        description: 'Must be at least 1.'
         required: false
-        example: 1
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -64,7 +64,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: de
+        example: fr
         type: string
         enumValues:
           - en
@@ -77,10 +77,10 @@ endpoints:
         nullable: false
         deprecated: false
     cleanQueryParameters:
-      per_page: 1
+      per_page: 16
       page: 22
       sort: architecto
-      lang: de
+      lang: fr
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -157,7 +157,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":{"id":1572,"name":{"en":"Antidote Jewel 1","de":"GegengiftJwl1","fr":"Joyau Poison 1","es":"Joya ant\u00eddoto 1","it":"G veleno 1","jp":"\u8010\u6bd2\u73e0\u3010\uff11\u3011"},"rarity":4,"num_slots":1,"buy":null,"sell":40,"description":{"en":"","de":null,"fr":null,"es":null,"it":null,"jp":null},"icon_url":"http:\/\/localhost\/assets\/items\/Jewel-Purple.png","skill_trees":[{"id":118,"name":{"en":"Poison","de":"Gift","fr":"Poison","es":"Veneno","it":"Veleno","jp":"\u6bd2"},"points":1},{"id":121,"name":{"en":"Stun","de":"Bet\u00e4uben","fr":"Volont\u00e9","es":"Aturdir","it":"Stordim.","jp":"\u6c17\u7d76"},"points":-1}]}}'
+        content: '{"data":{"id":1572,"name":{"en":"Antidote Jewel 1","de":"GegengiftJwl1","fr":"Joyau Poison 1","es":"Joya ant\u00eddoto 1","it":"G veleno 1","jp":"\u8010\u6bd2\u73e0\u3010\uff11\u3011"},"rarity":4,"num_slots":1,"buy":null,"sell":40,"description":{"en":"","de":null,"fr":null,"es":null,"it":null,"jp":null},"icon_url":"http:\/\/localhost:8088\/assets\/items\/Jewel-Purple.png","skill_trees":[{"id":118,"name":{"en":"Poison","de":"Gift","fr":"Poison","es":"Veneno","it":"Veleno","jp":"\u6bd2"},"points":1},{"id":121,"name":{"en":"Stun","de":"Bet\u00e4uben","fr":"Volont\u00e9","es":"Aturdir","it":"Stordim.","jp":"\u6c17\u7d76"},"points":-1}]}}'
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json

@@ -29,9 +29,9 @@ endpoints:
       per_page:
         custom: []
         name: per_page
-        description: 'Must be at least 1. Must not be greater than 100.'
+        description: 'Must be at least 1.'
         required: false
-        example: 1
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -64,7 +64,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: jp
+        example: es
         type: string
         enumValues:
           - en
@@ -77,10 +77,10 @@ endpoints:
         nullable: false
         deprecated: false
     cleanQueryParameters:
-      per_page: 1
+      per_page: 16
       page: 22
       sort: architecto
-      lang: jp
+      lang: es
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -157,7 +157,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":{"id":1914,"name":{"en":"Leather Headgear","de":"Leder-Kopfbedeckung","fr":"Coiffe en cuir","es":"Cubrecabeza de cuero","it":"Copricapo di cuoio","jp":"\u30ec\u30b6\u30fc\u30d8\u30c3\u30c9"},"slot":"Head","rarity":1,"icon_url":"http:\/\/localhost\/assets\/armor\/head1.png","defense":1,"max_defense":71,"resistances":{"fire":-1,"water":0,"thunder":0,"ice":0,"dragon":1},"gender":"Both","hunter_type":"Both","num_slots":1,"buy":50,"skill_trees":[{"id":33,"name":{"en":"Gathering","de":"Sammeln","fr":"Collecte","es":"Recogida","it":"Raccolta","jp":"\u63a1\u53d6"},"points":2},{"id":112,"name":{"en":"Whim","de":"Laune","fr":"Lubie","es":"Capricho","it":"Fatalit\u00e0","jp":"\u6c17\u307e\u3050\u308c"},"points":3}],"components":[{"quantity":1,"type":"Create","component_item":{"id":356,"name":{"en":"Warm Pelt","de":"Warmer Pelz","fr":"Pelage chaud","es":"Piel c\u00e1lida","it":"Pelle calda","jp":"\u6696\u304b\u3044\u6bdb\u76ae"},"type":"Flesh","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost\/assets\/items\/Hide-Green.png"}},{"quantity":1,"type":"Create","component_item":{"id":203,"name":{"en":"Iron Ore","de":"Eisenerz","fr":"Minerai de fer","es":"Hierro","it":"Ferro","jp":"\u9244\u9271\u77f3"},"type":"Ore","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost\/assets\/items\/Ore-Grey.png"}}]}}'
+        content: '{"data":{"id":1914,"name":{"en":"Leather Headgear","de":"Leder-Kopfbedeckung","fr":"Coiffe en cuir","es":"Cubrecabeza de cuero","it":"Copricapo di cuoio","jp":"\u30ec\u30b6\u30fc\u30d8\u30c3\u30c9"},"slot":"Head","rarity":1,"icon_url":"http:\/\/localhost:8088\/assets\/armor\/head1.png","defense":1,"max_defense":71,"resistances":{"fire":-1,"water":0,"thunder":0,"ice":0,"dragon":1},"gender":"Both","hunter_type":"Both","num_slots":1,"buy":50,"skill_trees":[{"id":33,"name":{"en":"Gathering","de":"Sammeln","fr":"Collecte","es":"Recogida","it":"Raccolta","jp":"\u63a1\u53d6"},"points":2},{"id":112,"name":{"en":"Whim","de":"Laune","fr":"Lubie","es":"Capricho","it":"Fatalit\u00e0","jp":"\u6c17\u307e\u3050\u308c"},"points":3}],"components":[{"quantity":1,"type":"Create","component_item":{"id":356,"name":{"en":"Warm Pelt","de":"Warmer Pelz","fr":"Pelage chaud","es":"Piel c\u00e1lida","it":"Pelle calda","jp":"\u6696\u304b\u3044\u6bdb\u76ae"},"type":"Flesh","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost:8088\/assets\/items\/Hide-Green.png"}},{"quantity":1,"type":"Create","component_item":{"id":203,"name":{"en":"Iron Ore","de":"Eisenerz","fr":"Minerai de fer","es":"Hierro","it":"Ferro","jp":"\u9244\u9271\u77f3"},"type":"Ore","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost:8088\/assets\/items\/Ore-Grey.png"}}]}}'
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json

@@ -31,9 +31,9 @@ endpoints:
       per_page:
         custom: []
         name: per_page
-        description: 'Must be at least 1. Must not be greater than 100.'
+        description: 'Must be at least 1.'
         required: false
-        example: 1
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -66,7 +66,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: fr
+        example: de
         type: string
         enumValues:
           - en
@@ -79,10 +79,10 @@ endpoints:
         nullable: false
         deprecated: false
     cleanQueryParameters:
-      per_page: 1
+      per_page: 16
       page: 22
       sort: architecto
-      lang: fr
+      lang: de
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -160,7 +160,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":{"id":1,"name":{"en":"Book of Combos 1","de":"Kombi-Buch 1","fr":"Alchimie, tome 1","es":"Libro combos 1","it":"Libro alchimia 1","jp":"\u8abf\u5408\u66f8\u2460\u5165\u9580\u7de8"},"type":"Tool","sub_type":"","rarity":4,"carry_capacity":1,"buy":null,"sell":100,"description":{"en":"An introductory text for first-time combiners. Improves your success rate.","de":null,"fr":null,"es":null,"it":null,"jp":null},"icon_url":"http:\/\/localhost\/assets\/items\/Book-Grey.png","weapon":null,"armor":null,"decoration":null,"monster_rewards":[],"quest_rewards":[],"gathering":[],"combinations":[],"components_required":[],"used_in":[{"quantity":1,"type":"Create","created_item":{"id":1662,"name":{"en":"Professor Jwl 1","de":"ProfessorJwl1","fr":"Joyau Inventeur 1","es":"Joya profesor 1","it":"G combinat. 1","jp":"\u535a\u58eb\u73e0\u3010\uff11\u3011"},"type":"Decoration","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost\/assets\/items\/Jewel-Purple.png"}}],"skill_trees":[]}}'
+        content: '{"data":{"id":1,"name":{"en":"Book of Combos 1","de":"Kombi-Buch 1","fr":"Alchimie, tome 1","es":"Libro combos 1","it":"Libro alchimia 1","jp":"\u8abf\u5408\u66f8\u2460\u5165\u9580\u7de8"},"type":"Tool","sub_type":"","rarity":4,"carry_capacity":1,"buy":null,"sell":100,"description":{"en":"An introductory text for first-time combiners. Improves your success rate.","de":null,"fr":null,"es":null,"it":null,"jp":null},"icon_url":"http:\/\/localhost:8088\/assets\/items\/Book-Grey.png","weapon":null,"armor":null,"decoration":null,"monster_rewards":[],"quest_rewards":[],"gathering":[],"combinations":[],"components_required":[],"used_in":[{"quantity":1,"type":"Create","created_item":{"id":1662,"name":{"en":"Professor Jwl 1","de":"ProfessorJwl1","fr":"Joyau Inventeur 1","es":"Joya profesor 1","it":"G combinat. 1","jp":"\u535a\u58eb\u73e0\u3010\uff11\u3011"},"type":"Decoration","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost:8088\/assets\/items\/Jewel-Purple.png"}}],"skill_trees":[]}}'
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json
@@ -218,7 +218,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"data":[{"quantity":1,"type":"Create","created_item":{"id":1662,"name":{"en":"Professor Jwl 1","de":"ProfessorJwl1","fr":"Joyau Inventeur 1","es":"Joya profesor 1","it":"G combinat. 1","jp":"\u535a\u58eb\u73e0\u3010\uff11\u3011"},"type":"Decoration","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost\/assets\/items\/Jewel-Purple.png"}}],"links":{"first":"http:\/\/localhost\/api\/v1\/items\/1\/components?page=1","last":"http:\/\/localhost\/api\/v1\/items\/1\/components?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","page":null,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items\/1\/components?page=1","label":"1","page":1,"active":true},{"url":null,"label":"Next &raquo;","page":null,"active":false}],"path":"http:\/\/localhost\/api\/v1\/items\/1\/components","per_page":30,"to":1,"total":1}}'
+        content: '{"data":[{"quantity":1,"type":"Create","created_item":{"id":1662,"name":{"en":"Professor Jwl 1","de":"ProfessorJwl1","fr":"Joyau Inventeur 1","es":"Joya profesor 1","it":"G combinat. 1","jp":"\u535a\u58eb\u73e0\u3010\uff11\u3011"},"type":"Decoration","sub_type":"","rarity":4,"icon_url":"http:\/\/localhost:8088\/assets\/items\/Jewel-Purple.png"}}],"links":{"first":"http:\/\/localhost\/api\/v1\/items\/1\/components?page=1","last":"http:\/\/localhost\/api\/v1\/items\/1\/components?page=1","prev":null,"next":null},"meta":{"current_page":1,"from":1,"last_page":1,"links":[{"url":null,"label":"&laquo; Previous","page":null,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items\/1\/components?page=1","label":"1","page":1,"active":true},{"url":null,"label":"Next &raquo;","page":null,"active":false}],"path":"http:\/\/localhost\/api\/v1\/items\/1\/components","per_page":30,"to":1,"total":1}}'
         headers:
           cache-control: 'max-age=86400, public'
           content-type: application/json

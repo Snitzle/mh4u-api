@@ -1,58 +1,191 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# MH4U Database API
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> A public, read-only REST API for the **Monster Hunter 4 Ultimate** game database — monsters, weapons, armor, decorations, items, quests, locations, skills and more.
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-13-FF2D20?logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white)
+![Tested with Pest](https://img.shields.io/badge/tested%20with-Pest-8BC34A?logo=pest&logoColor=white)
+![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The data behind the original [MH4U companion apps](https://github.com/kamegami13/MonsterHunter4UDatabase), re-served as a clean, versioned, cache-friendly JSON API built on Laravel 13. Useful for fan sites, hunting tools, Discord bots, or anything that needs structured MH4U data.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features
 
-## Learning Laravel
+- **Versioned REST API** under `/api/v1` returning consistent JSON resources.
+- **Universal search** across every entity type, powered by [Laravel Scout](https://laravel.com/docs/scout).
+- **Filtering, sorting & pagination** via [spatie/laravel-query-builder](https://spatie.be/docs/laravel-query-builder) (e.g. `?filter[name]=tigrex&sort=name`).
+- **Multi-language** names and descriptions (`en`, `de`, `fr`, `es`, `it`, `jp`) — request one with `?lang=de` or get them all at once.
+- **CDN-friendly caching** — responses send `Cache-Control: public`, `max-age` and `ETag` headers; reference data is static so it caches well.
+- **Rate limited** per IP, configurable via env.
+- **Absolute asset URLs** — every resource includes ready-to-use `icon_url` / `map_url` fields.
+- **Auto-generated API docs** via [Scribe](https://scribe.knuckles.wtf/), served at `/docs`.
+- **Quality tooling** — [Pest](https://pestphp.com/) tests, [Larastan](https://github.com/larastan/larastan) static analysis, [Pint](https://laravel.com/docs/pint) formatting.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Tech stack
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+| Concern | Tool |
+| --- | --- |
+| Framework | Laravel 13 (PHP 8.3) |
+| Search | Laravel Scout |
+| Query parsing | spatie/laravel-query-builder |
+| Database | SQLite (default) · MySQL (optional) |
+| API docs | Scribe |
+| Tests | Pest 4 |
+| Static analysis / style | Larastan · Pint |
+| Local debugging | Telescope · Pail |
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## Endpoints
 
-## Agentic Development
+Base URL: `http://localhost:8000/api/v1`
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `GET` | `/search` | Universal search across all entity types |
+| `GET` | `/monsters` | List monsters |
+| `GET` | `/monsters/{id}` | Monster detail (damage, weaknesses, habitats, drops, quests) |
+| `GET` | `/monsters/{id}/hunting-rewards` | Carve / capture rewards (filter by `?rank=`) |
+| `GET` | `/weapons` | List weapons |
+| `GET` | `/weapons/{id}` | Weapon detail |
+| `GET` | `/weapons/{id}/tree` | Weapon upgrade tree |
+| `GET` | `/armor` | List armor |
+| `GET` | `/armor/{id}` | Armor detail |
+| `GET` | `/decorations` | List decorations |
+| `GET` | `/decorations/{id}` | Decoration detail |
+| `GET` | `/items` | List items |
+| `GET` | `/items/{id}` | Item detail |
+| `GET` | `/items/{id}/components` | Crafting components for an item |
+| `GET` | `/quests` | List quests |
+| `GET` | `/quests/{id}` | Quest detail |
+| `GET` | `/quests/{id}/rewards` | Quest rewards |
+| `GET` | `/locations` | List locations |
+| `GET` | `/locations/{id}` | Location detail |
+| `GET` | `/locations/{id}/gathering` | Gathering data for a location |
+| `GET` | `/skill-trees` | List skill trees |
+| `GET` | `/skill-trees/{id}` | Skill tree detail |
+| `GET` | `/wyporium` | Wyporium trades |
+| `GET` | `/horn-melodies` | Hunting Horn melodies |
 
-```bash
-composer require laravel/boost --dev
+Full, always-up-to-date docs (with every parameter and response field) are generated by Scribe at **`/docs`**.
 
-php artisan boost:install
+## Query parameters
+
+```http
+# Partial-match filter + sort, English only
+GET /api/v1/monsters?filter[name]=tigrex&sort=name&lang=en
+
+# Filter monsters by class, descending sort
+GET /api/v1/monsters?filter[class]=Flying Wyvern&sort=-name
+
+# Search a few types, capped at 5 hits each
+GET /api/v1/search?q=tigrex&types=monsters,weapons&limit=5
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+- **`filter[...]`** — per-endpoint allowed filters (e.g. monsters allow `class` and partial `name`).
+- **`sort`** — allowed sort fields; prefix with `-` for descending.
+- **`page`** — paginated results include `links` and `meta`.
+- **`lang`** — `en` (default base), `de`, `fr`, `es`, `it`, `jp`. Omit it to receive every translation as an object.
 
-## Contributing
+### Example response
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+`GET /api/v1/monsters?lang=en`
 
-## Code of Conduct
+```json
+{
+  "data": [
+    {
+      "id": 40,
+      "name": "Tigrex",
+      "class": "Flying Wyvern",
+      "icon_url": "http://localhost:8000/assets/icons/monsters/tigrex.png"
+    }
+  ],
+  "links": { "first": "...", "last": "...", "prev": null, "next": "..." },
+  "meta": { "current_page": 1, "per_page": 20, "total": 95 }
+}
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+`GET /api/v1/search?q=tigrex`
 
-## Security Vulnerabilities
+```json
+{
+  "data": {
+    "monsters": [
+      {
+        "type": "monster",
+        "id": 40,
+        "name": "Tigrex",
+        "icon_url": "http://localhost:8000/assets/icons/monsters/tigrex.png",
+        "url": "http://localhost:8000/api/v1/monsters/40"
+      }
+    ]
+  },
+  "meta": { "query": "tigrex" }
+}
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Without `?lang`, the `name` field is returned as `{ "en": "Tigrex", "de": "Tigrex", ... }`.
+
+## Getting started
+
+**Requirements:** PHP 8.3+ and [Composer](https://getcomposer.org/). SQLite is the default, so no database server is needed to run locally.
+
+```bash
+git clone https://github.com/Snitzle/mh4u-api.git
+cd mh4u-api
+composer setup
+composer dev
+```
+
+The API is now at `http://localhost:8000/api/v1` and the docs at `http://localhost:8000/docs`.
+
+`composer setup` runs the full first-time setup for you:
+
+1. `composer install`
+2. copies `.env.example` → `.env` and generates the app key
+3. creates the SQLite database file
+4. migrates and seeds (imports the bundled `database/source/mh4u.db`)
+5. syncs game asset images (`php artisan mh4u:sync-assets`)
+6. generates the API docs (`php artisan scribe:generate`)
+
+`composer dev` runs the dev server and live log tail together.
+
+### Using MySQL instead
+
+Edit `.env` before running setup:
+
+```dotenv
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=mh4u_api
+DB_USERNAME=root
+DB_PASSWORD=secret
+```
+
+then `php artisan migrate --seed`.
+
+## Development
+
+```bash
+composer test     # run the Pest test suite
+composer lint     # format with Pint
+composer stan     # static analysis with Larastan
+composer ci       # lint check + stan + tests (what CI runs)
+```
+
+## Data source & attribution
+
+The game data is imported from the community-built SQLite database used by the
+[MonsterHunter4UDatabase](https://github.com/kamegami13/MonsterHunter4UDatabase)
+Android app. All credit for compiling that data goes to its original authors.
+
+*Monster Hunter 4 Ultimate*, all related names, assets and imagery are
+trademarks of **© CAPCOM CO., LTD.** This is an unofficial, non-commercial fan
+project and is not affiliated with or endorsed by Capcom.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The source code of this project is released under the [MIT License](LICENSE).
+Game data and assets remain the property of their respective owners (see above).

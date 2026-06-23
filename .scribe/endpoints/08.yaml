@@ -29,9 +29,9 @@ endpoints:
       per_page:
         custom: []
         name: per_page
-        description: 'Must be at least 1. Must not be greater than 100.'
+        description: 'Must be at least 1.'
         required: false
-        example: 1
+        example: 16
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -64,7 +64,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: it
+        example: de
         type: string
         enumValues:
           - en
@@ -77,10 +77,10 @@ endpoints:
         nullable: false
         deprecated: false
     cleanQueryParameters:
-      per_page: 1
+      per_page: 16
       page: 22
       sort: architecto
-      lang: it
+      lang: de
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
