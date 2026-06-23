@@ -10,6 +10,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property QuestHub $hub
+ * @property QuestType $type
+ */
 class Quest extends BaseModel
 {
     protected $table = 'quests';

@@ -7,6 +7,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property-read ItemSkillTree|null $pivot
+ */
 class SkillTree extends BaseModel
 {
     protected $table = 'skill_trees';
@@ -24,11 +27,12 @@ class SkillTree extends BaseModel
     /**
      * Items (armor / charms / decorations) that grant points toward this tree.
      *
-     * @return BelongsToMany<Item, $this>
+     * @return BelongsToMany<Item, $this, ItemSkillTree>
      */
     public function items(): BelongsToMany
     {
         return $this->belongsToMany(Item::class, 'item_skill_tree', 'skill_tree_id', 'item_id')
+            ->using(ItemSkillTree::class)
             ->withPivot('point_value');
     }
 }

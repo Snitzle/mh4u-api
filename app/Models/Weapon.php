@@ -9,6 +9,10 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
+/**
+ * @property WeaponType $wtype
+ * @property bool|null $final
+ */
 class Weapon extends BaseModel
 {
     protected $table = 'weapons';
@@ -53,6 +57,16 @@ class Weapon extends BaseModel
     public function hornMelodies(): HasMany
     {
         return $this->hasMany(HornMelody::class, 'notes', 'horn_notes');
+    }
+
+    /**
+     * Crafting recipe lines (the weapon shares its id with its item).
+     *
+     * @return HasMany<Component, $this>
+     */
+    public function componentsRequired(): HasMany
+    {
+        return $this->hasMany(Component::class, 'created_item_id', 'id');
     }
 
     /**

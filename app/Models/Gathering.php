@@ -8,6 +8,9 @@ use App\Enums\Rank;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * @property Rank $rank
+ */
 class Gathering extends BaseModel
 {
     protected $table = 'gathering';
