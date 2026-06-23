@@ -74,4 +74,14 @@ class Armor extends BaseModel
     {
         $query->whereHas('item', fn ($item) => $item->where('rarity', $rarity));
     }
+
+    /**
+     * Armor that grants points toward the given skill tree.
+     *
+     * @param  Builder<Armor>  $query
+     */
+    public function scopeWithSkill(Builder $query, int|string $skillTreeId): void
+    {
+        $query->whereHas('skillTrees', fn ($skills) => $skills->whereKey($skillTreeId));
+    }
 }

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "MH4U Database API",
-        "_postman_id": "1dd8dec3-d2f6-4ee6-a459-5744f6eeea76",
+        "_postman_id": "855799fa-310b-48cd-96a1-e67119aa23c3",
         "description": "A public, read-only REST API for the Monster Hunter 4 Ultimate game database: monsters, weapons, armor, items, quests, locations, skills and more. Responses are cached and rate-limited; pass ?lang=de|fr|es|it|jp to localize names.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -46,7 +46,7 @@
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "en",
+                                    "value": "fr",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -63,13 +63,19 @@
                                     "disabled": false
                                 },
                                 {
+                                    "key": "filter[skill]",
+                                    "value": "12",
+                                    "description": "Only armor granting this skill tree ID.",
+                                    "disabled": false
+                                },
+                                {
                                     "key": "filter[hunter_type]",
                                     "value": "Blade",
                                     "description": "Filter by hunter type: Blade, Gunner, Both.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/armor?per_page=16&page=22&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade"
+                            "raw": "{{baseUrl}}\/api\/v1\/armor?per_page=16&page=22&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade"
                         },
                         "method": "GET",
                         "header": [
@@ -105,7 +111,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -117,7 +123,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":4260,\"name\":\"Zinogre Vambraces Z\",\"slot\":\"Arms\",\"rarity\":9,\"defense\":94,\"max_defense\":143,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms9.png\"},{\"id\":4261,\"name\":\"Zinogre Faulds Z\",\"slot\":\"Waist\",\"rarity\":9,\"defense\":94,\"max_defense\":143,\"num_slots\":0,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/waist9.png\"},{\"id\":4262,\"name\":\"Zinogre Greaves Z\",\"slot\":\"Legs\",\"rarity\":9,\"defense\":94,\"max_defense\":143,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/legs9.png\"},{\"id\":4418,\"name\":\"Lagiacrus Helm X\",\"slot\":\"Head\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/head9.png\"},{\"id\":4419,\"name\":\"Lagiacrus Mail X\",\"slot\":\"Body\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/body9.png\"},{\"id\":4420,\"name\":\"Lagiacrus Braces X\",\"slot\":\"Arms\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms9.png\"},{\"id\":4421,\"name\":\"Lagiacrus Faulds X\",\"slot\":\"Waist\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":3,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/waist9.png\"},{\"id\":4422,\"name\":\"Lagiacrus Greaves X\",\"slot\":\"Legs\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/legs9.png\"},{\"id\":4148,\"name\":\"Aelucanth Vertex X\",\"slot\":\"Head\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/head8.png\"},{\"id\":4149,\"name\":\"Aelucanth Thorax X\",\"slot\":\"Body\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":0,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/body8.png\"},{\"id\":4150,\"name\":\"Aelucanth Brachia X\",\"slot\":\"Arms\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms8.png\"},{\"id\":4151,\"name\":\"Aelucanth Elytra X\",\"slot\":\"Waist\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/waist8.png\"},{\"id\":4152,\"name\":\"Aelucanth Crura X\",\"slot\":\"Legs\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/legs8.png\"},{\"id\":4158,\"name\":\"Rhopessa Vertex X\",\"slot\":\"Head\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/head8.png\"},{\"id\":4159,\"name\":\"Rhopessa Thorax X\",\"slot\":\"Body\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":0,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/body8.png\"},{\"id\":4160,\"name\":\"Rhopessa Brachia X\",\"slot\":\"Arms\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms8.png\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=193\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21\",\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23\"},\"meta\":{\"current_page\":22,\"from\":337,\"last_page\":193,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=19\",\"label\":\"19\",\"page\":19,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=20\",\"label\":\"20\",\"page\":20,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21\",\"label\":\"21\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=22\",\"label\":\"22\",\"page\":22,\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23\",\"label\":\"23\",\"page\":23,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=24\",\"label\":\"24\",\"page\":24,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=25\",\"label\":\"25\",\"page\":25,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=192\",\"label\":\"192\",\"page\":192,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=193\",\"label\":\"193\",\"page\":193,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23\",\"label\":\"Next &raquo;\",\"page\":23,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor\",\"per_page\":16,\"to\":352,\"total\":3087}}",
+                            "body": "{\"data\":[{\"id\":4260,\"name\":\"Avant-bras Zinogre Z\",\"slot\":\"Arms\",\"rarity\":9,\"defense\":94,\"max_defense\":143,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms9.png\"},{\"id\":4261,\"name\":\"Tassette Zinogre Z\",\"slot\":\"Waist\",\"rarity\":9,\"defense\":94,\"max_defense\":143,\"num_slots\":0,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/waist9.png\"},{\"id\":4262,\"name\":\"Gr\\u00e8ves Zinogre Z\",\"slot\":\"Legs\",\"rarity\":9,\"defense\":94,\"max_defense\":143,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/legs9.png\"},{\"id\":4418,\"name\":\"Heaume Lagiacrus X\",\"slot\":\"Head\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/head9.png\"},{\"id\":4419,\"name\":\"Cotte Lagiacrus X\",\"slot\":\"Body\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/body9.png\"},{\"id\":4420,\"name\":\"Avant-bras Lagiacrus X\",\"slot\":\"Arms\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms9.png\"},{\"id\":4421,\"name\":\"Tassette Lagiacrus X\",\"slot\":\"Waist\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":3,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/waist9.png\"},{\"id\":4422,\"name\":\"Gr\\u00e8ves Lagiacrus X\",\"slot\":\"Legs\",\"rarity\":9,\"defense\":93,\"max_defense\":142,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/legs9.png\"},{\"id\":4148,\"name\":\"Vertex Aelucanth X\",\"slot\":\"Head\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/head8.png\"},{\"id\":4149,\"name\":\"Thorax Aelucanth X\",\"slot\":\"Body\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":0,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/body8.png\"},{\"id\":4150,\"name\":\"Brachia Aelucanth X\",\"slot\":\"Arms\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms8.png\"},{\"id\":4151,\"name\":\"\\u00c9lytre Aelucanth X\",\"slot\":\"Waist\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/waist8.png\"},{\"id\":4152,\"name\":\"Jambes Aelucanth X\",\"slot\":\"Legs\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":2,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/legs8.png\"},{\"id\":4158,\"name\":\"Vertex Rhopessa X\",\"slot\":\"Head\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/head8.png\"},{\"id\":4159,\"name\":\"Thorax Rhopessa X\",\"slot\":\"Body\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":0,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/body8.png\"},{\"id\":4160,\"name\":\"Brachia Rhopessa X\",\"slot\":\"Arms\",\"rarity\":8,\"defense\":92,\"max_defense\":141,\"num_slots\":1,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/armor\\\/arms8.png\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=193\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21\",\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23\"},\"meta\":{\"current_page\":22,\"from\":337,\"last_page\":193,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=19\",\"label\":\"19\",\"page\":19,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=20\",\"label\":\"20\",\"page\":20,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21\",\"label\":\"21\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=22\",\"label\":\"22\",\"page\":22,\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23\",\"label\":\"23\",\"page\":23,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=24\",\"label\":\"24\",\"page\":24,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=25\",\"label\":\"25\",\"page\":25,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=192\",\"label\":\"192\",\"page\":192,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=193\",\"label\":\"193\",\"page\":193,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23\",\"label\":\"Next &raquo;\",\"page\":23,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/armor\",\"per_page\":16,\"to\":352,\"total\":3087}}",
                             "name": ""
                         }
                     ]
@@ -179,7 +185,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -229,12 +235,12 @@
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "en",
+                                    "value": "it",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/decorations?per_page=16&page=22&sort=architecto&lang=en"
+                            "raw": "{{baseUrl}}\/api\/v1\/decorations?per_page=16&page=22&sort=architecto&lang=it"
                         },
                         "method": "GET",
                         "header": [
@@ -270,7 +276,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -344,7 +350,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -394,12 +400,12 @@
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "jp",
+                                    "value": "it",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/horn-melodies?per_page=16&page=22&sort=architecto&lang=jp"
+                            "raw": "{{baseUrl}}\/api\/v1\/horn-melodies?per_page=16&page=22&sort=architecto&lang=it"
                         },
                         "method": "GET",
                         "header": [
@@ -435,7 +441,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -447,7 +453,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=9\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=21\",\"next\":null},\"meta\":{\"current_page\":22,\"from\":null,\"last_page\":9,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=3\",\"label\":\"3\",\"page\":3,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=4\",\"label\":\"4\",\"page\":4,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=5\",\"label\":\"5\",\"page\":5,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=6\",\"label\":\"6\",\"page\":6,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=7\",\"label\":\"7\",\"page\":7,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=8\",\"label\":\"8\",\"page\":8,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=jp&page=9\",\"label\":\"9\",\"page\":9,\"active\":false},{\"url\":null,\"label\":\"Next &raquo;\",\"page\":null,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies\",\"per_page\":16,\"to\":null,\"total\":143}}",
+                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=9\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=21\",\"next\":null},\"meta\":{\"current_page\":22,\"from\":null,\"last_page\":9,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=3\",\"label\":\"3\",\"page\":3,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=4\",\"label\":\"4\",\"page\":4,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=5\",\"label\":\"5\",\"page\":5,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=6\",\"label\":\"6\",\"page\":6,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=7\",\"label\":\"7\",\"page\":7,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=8\",\"label\":\"8\",\"page\":8,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies?per_page=16&sort=architecto&lang=it&page=9\",\"label\":\"9\",\"page\":9,\"active\":false},{\"url\":null,\"label\":\"Next &raquo;\",\"page\":null,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/horn-melodies\",\"per_page\":16,\"to\":null,\"total\":143}}",
                             "name": ""
                         }
                     ]
@@ -459,7 +465,7 @@
             "description": "\nEvery item: materials, consumables and the base records for equipment.\nItem detail includes where to get it and what it crafts into.",
             "item": [
                 {
-                    "name": "GET api\/v1\/items",
+                    "name": "List items.",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -479,18 +485,36 @@
                                 },
                                 {
                                     "key": "sort",
-                                    "value": "architecto",
-                                    "description": "",
+                                    "value": "-rarity",
+                                    "description": "Sort by name, rarity, buy or sell (prefix - to reverse).",
                                     "disabled": false
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "it",
+                                    "value": "jp",
                                     "description": "",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filter[type]",
+                                    "value": "Ore",
+                                    "description": "Filter by item type.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filter[rarity]",
+                                    "value": "7",
+                                    "description": "Filter by rarity (1-10).",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filter[name]",
+                                    "value": "potion",
+                                    "description": "Partial name match.",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/items?per_page=16&page=22&sort=architecto&lang=it"
+                            "raw": "{{baseUrl}}\/api\/v1\/items?per_page=16&page=22&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion"
                         },
                         "method": "GET",
                         "header": [
@@ -514,7 +538,7 @@
                             "header": [
                                 {
                                     "key": "cache-control",
-                                    "value": "no-cache, private"
+                                    "value": "max-age=86400, public"
                                 },
                                 {
                                     "key": "content-type",
@@ -526,7 +550,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -537,8 +561,8 @@
                                     "value": "ETag"
                                 }
                             ],
-                            "code": 400,
-                            "body": "{\"error\":{\"status\":400,\"code\":\"bad_request\",\"message\":\"Requested sort(s) `architecto` is not allowed. Allowed sort(s) are `name, rarity, buy, sell, id`.\"}}",
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":4983,\"name\":\"GX\\u8352\\u5929\\u3010\\u7fbd\\u8882\\u3011\",\"type\":\"Armor\",\"sub_type\":\"Arms\",\"rarity\":10,\"icon_url\":null},{\"id\":4982,\"name\":\"GX\\u8352\\u5929\\u3010\\u7fbd\\u8863\\u3011\",\"type\":\"Armor\",\"sub_type\":\"Body\",\"rarity\":10,\"icon_url\":null},{\"id\":4981,\"name\":\"GX\\u8352\\u5929\\u3010\\u5149\\u51a0\\u3011\",\"type\":\"Armor\",\"sub_type\":\"Head\",\"rarity\":10,\"icon_url\":null},{\"id\":4980,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30af\\u30eb\\u30b9\",\"type\":\"Armor\",\"sub_type\":\"Legs\",\"rarity\":10,\"icon_url\":null},{\"id\":4979,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30bf\\u30bb\\u30c3\\u30c8\",\"type\":\"Armor\",\"sub_type\":\"Waist\",\"rarity\":10,\"icon_url\":null},{\"id\":4978,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30ab\\u30ce\\u30f3\",\"type\":\"Armor\",\"sub_type\":\"Arms\",\"rarity\":10,\"icon_url\":null},{\"id\":4977,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30d7\\u30ec\\u30fc\\u30c8\",\"type\":\"Armor\",\"sub_type\":\"Body\",\"rarity\":10,\"icon_url\":null},{\"id\":4976,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30b3\\u30a4\\u30d5\",\"type\":\"Armor\",\"sub_type\":\"Head\",\"rarity\":10,\"icon_url\":null},{\"id\":4975,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30ad\\u30e5\\u30a4\\u30b9\",\"type\":\"Armor\",\"sub_type\":\"Legs\",\"rarity\":10,\"icon_url\":null},{\"id\":4974,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30e9\\u30f3\\u30d0\\u30fc\",\"type\":\"Armor\",\"sub_type\":\"Waist\",\"rarity\":10,\"icon_url\":null},{\"id\":4973,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30af\\u30e9\\u30fc\\u30af\",\"type\":\"Armor\",\"sub_type\":\"Arms\",\"rarity\":10,\"icon_url\":null},{\"id\":4972,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30a2\\u30fc\\u30de\\u30fc\",\"type\":\"Armor\",\"sub_type\":\"Body\",\"rarity\":10,\"icon_url\":null},{\"id\":4971,\"name\":\"GX\\u30b0\\u30ea\\u30fc\\u30c9\\u30ab\\u30b9\\u30af\",\"type\":\"Armor\",\"sub_type\":\"Head\",\"rarity\":10,\"icon_url\":null},{\"id\":4970,\"name\":\"GX\\u30cf\\u30f3\\u30bf\\u30fc\\u30af\\u30eb\\u30b9\",\"type\":\"Armor\",\"sub_type\":\"Legs\",\"rarity\":10,\"icon_url\":null},{\"id\":4969,\"name\":\"GX\\u30cf\\u30f3\\u30bf\\u30fc\\u30bf\\u30bb\\u30c3\\u30c8\",\"type\":\"Armor\",\"sub_type\":\"Waist\",\"rarity\":10,\"icon_url\":null},{\"id\":4968,\"name\":\"GX\\u30cf\\u30f3\\u30bf\\u30fc\\u30ab\\u30ce\\u30f3\",\"type\":\"Armor\",\"sub_type\":\"Arms\",\"rarity\":10,\"icon_url\":null}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21\",\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23\"},\"meta\":{\"current_page\":22,\"from\":337,\"last_page\":458,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=19\",\"label\":\"19\",\"page\":19,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=20\",\"label\":\"20\",\"page\":20,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21\",\"label\":\"21\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=22\",\"label\":\"22\",\"page\":22,\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23\",\"label\":\"23\",\"page\":23,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=24\",\"label\":\"24\",\"page\":24,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=25\",\"label\":\"25\",\"page\":25,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=457\",\"label\":\"457\",\"page\":457,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458\",\"label\":\"458\",\"page\":458,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23\",\"label\":\"Next &raquo;\",\"page\":23,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/items\",\"per_page\":16,\"to\":352,\"total\":7324}}",
                             "name": ""
                         }
                     ]
@@ -600,7 +624,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -668,7 +692,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -759,7 +783,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -833,7 +857,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -901,7 +925,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -992,7 +1016,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1066,7 +1090,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1134,7 +1158,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1184,7 +1208,7 @@
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "it",
+                                    "value": "de",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -1207,7 +1231,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/quests?per_page=16&page=22&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24"
+                            "raw": "{{baseUrl}}\/api\/v1\/quests?per_page=16&page=22&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24"
                         },
                         "method": "GET",
                         "header": [
@@ -1243,7 +1267,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1255,7 +1279,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":546,\"name\":\"\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":547,\"name\":\"\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":551,\"name\":\"USJ: Hot Ticket\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":704,\"name\":\"Bonus: Code Black\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":705,\"name\":\"Bonus: Code White\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":130,\"name\":\"Harvest Tour: Frozen Seaway\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":131,\"name\":\"Harvest Tour: Volcanic Hollow\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":132,\"name\":\"Harvest Tour: Heaven's Mount\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":133,\"name\":\"Harvest Tour: Dunes (Night)\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":134,\"name\":\"Skiff Competition\",\"hub\":\"Caravan\",\"type\":\"Urgent\",\"stars\":8},{\"id\":135,\"name\":\"Hide-and-Freak\",\"hub\":\"Caravan\",\"type\":\"Key\",\"stars\":8},{\"id\":136,\"name\":\"Take a Powderstone\",\"hub\":\"Caravan\",\"type\":\"Key\",\"stars\":8},{\"id\":137,\"name\":\"Primal Pests\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":138,\"name\":\"Desert Delinquents\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":139,\"name\":\"Snowbound Showdown\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":140,\"name\":\"Fin Finder\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21\",\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23\"},\"meta\":{\"current_page\":22,\"from\":337,\"last_page\":36,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=19\",\"label\":\"19\",\"page\":19,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=20\",\"label\":\"20\",\"page\":20,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21\",\"label\":\"21\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=22\",\"label\":\"22\",\"page\":22,\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23\",\"label\":\"23\",\"page\":23,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=24\",\"label\":\"24\",\"page\":24,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=25\",\"label\":\"25\",\"page\":25,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=35\",\"label\":\"35\",\"page\":35,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36\",\"label\":\"36\",\"page\":36,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23\",\"label\":\"Next &raquo;\",\"page\":23,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests\",\"per_page\":16,\"to\":352,\"total\":569}}",
+                            "body": "{\"data\":[{\"id\":546,\"name\":\"\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":547,\"name\":\"\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":551,\"name\":\"USJ: Hot Ticket\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":704,\"name\":\"Bonus: Code Black\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":705,\"name\":\"Bonus: Code White\",\"hub\":\"Event\",\"type\":\"Normal\",\"stars\":7},{\"id\":130,\"name\":\"Harvest Tour: Frozen Seaway\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":131,\"name\":\"Harvest Tour: Volcanic Hollow\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":132,\"name\":\"Harvest Tour: Heaven's Mount\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":133,\"name\":\"Harvest Tour: Dunes (Night)\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":134,\"name\":\"Skiff Competition\",\"hub\":\"Caravan\",\"type\":\"Urgent\",\"stars\":8},{\"id\":135,\"name\":\"Hide-and-Freak\",\"hub\":\"Caravan\",\"type\":\"Key\",\"stars\":8},{\"id\":136,\"name\":\"Take a Powderstone\",\"hub\":\"Caravan\",\"type\":\"Key\",\"stars\":8},{\"id\":137,\"name\":\"Primal Pests\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":138,\"name\":\"Desert Delinquents\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":139,\"name\":\"Snowbound Showdown\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8},{\"id\":140,\"name\":\"Fin Finder\",\"hub\":\"Caravan\",\"type\":\"Normal\",\"stars\":8}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21\",\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23\"},\"meta\":{\"current_page\":22,\"from\":337,\"last_page\":36,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=19\",\"label\":\"19\",\"page\":19,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=20\",\"label\":\"20\",\"page\":20,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21\",\"label\":\"21\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=22\",\"label\":\"22\",\"page\":22,\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23\",\"label\":\"23\",\"page\":23,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=24\",\"label\":\"24\",\"page\":24,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=25\",\"label\":\"25\",\"page\":25,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=35\",\"label\":\"35\",\"page\":35,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36\",\"label\":\"36\",\"page\":36,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23\",\"label\":\"Next &raquo;\",\"page\":23,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/quests\",\"per_page\":16,\"to\":352,\"total\":569}}",
                             "name": ""
                         }
                     ]
@@ -1317,7 +1341,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1385,7 +1409,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1449,7 +1473,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"q\":\"b\",\"types\":\"architecto\",\"limit\":22,\"lang\":\"it\"}"
+                            "raw": "{\"q\":\"b\",\"types\":\"architecto\",\"limit\":22,\"lang\":\"fr\"}"
                         },
                         "description": "",
                         "auth": {
@@ -1473,7 +1497,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1523,12 +1547,12 @@
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "es",
+                                    "value": "jp",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/skill-trees?per_page=16&page=22&sort=architecto&lang=es"
+                            "raw": "{{baseUrl}}\/api\/v1\/skill-trees?per_page=16&page=22&sort=architecto&lang=jp"
                         },
                         "method": "GET",
                         "header": [
@@ -1564,7 +1588,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1638,7 +1662,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1688,7 +1712,7 @@
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "es",
+                                    "value": "it",
                                     "description": "",
                                     "disabled": false
                                 },
@@ -1711,7 +1735,7 @@
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/weapons?per_page=16&page=22&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire"
+                            "raw": "{{baseUrl}}\/api\/v1\/weapons?per_page=16&page=22&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire"
                         },
                         "method": "GET",
                         "header": [
@@ -1747,7 +1771,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1759,7 +1783,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":6025,\"name\":\"Tambor aullador\",\"wtype\":\"Hunting Horn\",\"rarity\":7,\"attack\":988,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/hunting_horn7.png\"},{\"id\":6069,\"name\":\"Solo pesado\",\"wtype\":\"Hunting Horn\",\"rarity\":8,\"attack\":988,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/hunting_horn8.png\"},{\"id\":6083,\"name\":\"Musa Vadya+\",\"wtype\":\"Hunting Horn\",\"rarity\":7,\"attack\":988,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/hunting_horn7.png\"},{\"id\":6495,\"name\":\"Tajafuegos de Rath\",\"wtype\":\"Switch Axe\",\"rarity\":7,\"attack\":972,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe7.png\"},{\"id\":6501,\"name\":\"Rosa celeste\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":2,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6585,\"name\":\"Zas atronador Kirin+\",\"wtype\":\"Switch Axe\",\"rarity\":8,\"attack\":972,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe8.png\"},{\"id\":6595,\"name\":\"Hacha de Aksa\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6599,\"name\":\"Falange de escamas\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":3,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6608,\"name\":\"Gran Inceadeus\",\"wtype\":\"Switch Axe\",\"rarity\":7,\"attack\":972,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe7.png\"},{\"id\":6626,\"name\":\"Farasa de Daora\",\"wtype\":\"Switch Axe\",\"rarity\":7,\"attack\":972,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe7.png\"},{\"id\":6629,\"name\":\"\\u5927\\u6d77\\u8cca\\uff2a\\u30a2\\u30c3\\u30af\\u30b9\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":3,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6631,\"name\":\"\\u7279\\u5831\\u968a\\u5c02\\u7528\\u65a7\\u3010\\u4ed9\\u72d0\\u3011\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":3,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6655,\"name\":\"Alondra celeste\",\"wtype\":\"Charge Blade\",\"rarity\":9,\"attack\":972,\"num_slots\":2,\"final\":true,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade9.png\"},{\"id\":6663,\"name\":\"Propensi\\u00f3n\",\"wtype\":\"Charge Blade\",\"rarity\":10,\"attack\":972,\"num_slots\":0,\"final\":true,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade10.png\"},{\"id\":6697,\"name\":\"Maximinsecto\",\"wtype\":\"Charge Blade\",\"rarity\":9,\"attack\":972,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade9.png\"},{\"id\":6706,\"name\":\"Tortuga de Daora\",\"wtype\":\"Charge Blade\",\"rarity\":10,\"attack\":972,\"num_slots\":2,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade10.png\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21\",\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23\"},\"meta\":{\"current_page\":22,\"from\":337,\"last_page\":146,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=19\",\"label\":\"19\",\"page\":19,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=20\",\"label\":\"20\",\"page\":20,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21\",\"label\":\"21\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=22\",\"label\":\"22\",\"page\":22,\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23\",\"label\":\"23\",\"page\":23,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=24\",\"label\":\"24\",\"page\":24,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=25\",\"label\":\"25\",\"page\":25,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=145\",\"label\":\"145\",\"page\":145,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146\",\"label\":\"146\",\"page\":146,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23\",\"label\":\"Next &raquo;\",\"page\":23,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons\",\"per_page\":16,\"to\":352,\"total\":2324}}",
+                            "body": "{\"data\":[{\"id\":6025,\"name\":\"Necrotamburo urlante\",\"wtype\":\"Hunting Horn\",\"rarity\":7,\"attack\":988,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/hunting_horn7.png\"},{\"id\":6069,\"name\":\"Rintocco pesante\",\"wtype\":\"Hunting Horn\",\"rarity\":8,\"attack\":988,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/hunting_horn8.png\"},{\"id\":6083,\"name\":\"Musa Vadya+\",\"wtype\":\"Hunting Horn\",\"rarity\":7,\"attack\":988,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/hunting_horn7.png\"},{\"id\":6495,\"name\":\"Combinatore Rath\",\"wtype\":\"Switch Axe\",\"rarity\":7,\"attack\":972,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe7.png\"},{\"id\":6501,\"name\":\"Rosa azzurra\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":2,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6585,\"name\":\"Eco di tuono Kirin+\",\"wtype\":\"Switch Axe\",\"rarity\":8,\"attack\":972,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe8.png\"},{\"id\":6595,\"name\":\"Spad-ascia Aksa\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6599,\"name\":\"Falange squamata\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":3,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6608,\"name\":\"Gran Inceadeus\",\"wtype\":\"Switch Axe\",\"rarity\":7,\"attack\":972,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe7.png\"},{\"id\":6626,\"name\":\"Farasa Daora\",\"wtype\":\"Switch Axe\",\"rarity\":7,\"attack\":972,\"num_slots\":0,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe7.png\"},{\"id\":6629,\"name\":\"\\u5927\\u6d77\\u8cca\\uff2a\\u30a2\\u30c3\\u30af\\u30b9\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":3,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6631,\"name\":\"\\u7279\\u5831\\u968a\\u5c02\\u7528\\u65a7\\u3010\\u4ed9\\u72d0\\u3011\",\"wtype\":\"Switch Axe\",\"rarity\":6,\"attack\":972,\"num_slots\":3,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/switch_axe6.png\"},{\"id\":6655,\"name\":\"Allodola azzurra\",\"wtype\":\"Charge Blade\",\"rarity\":9,\"attack\":972,\"num_slots\":2,\"final\":true,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade9.png\"},{\"id\":6663,\"name\":\"Propensione\",\"wtype\":\"Charge Blade\",\"rarity\":10,\"attack\":972,\"num_slots\":0,\"final\":true,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade10.png\"},{\"id\":6697,\"name\":\"Maximinsetto\",\"wtype\":\"Charge Blade\",\"rarity\":9,\"attack\":972,\"num_slots\":1,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade9.png\"},{\"id\":6706,\"name\":\"Schiantuggine Daora\",\"wtype\":\"Charge Blade\",\"rarity\":10,\"attack\":972,\"num_slots\":2,\"final\":false,\"icon_url\":\"http:\\\/\\\/localhost:8088\\\/assets\\\/weapons\\\/charge_blade10.png\"}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21\",\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23\"},\"meta\":{\"current_page\":22,\"from\":337,\"last_page\":146,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=19\",\"label\":\"19\",\"page\":19,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=20\",\"label\":\"20\",\"page\":20,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21\",\"label\":\"21\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=22\",\"label\":\"22\",\"page\":22,\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23\",\"label\":\"23\",\"page\":23,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=24\",\"label\":\"24\",\"page\":24,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=25\",\"label\":\"25\",\"page\":25,\"active\":false},{\"url\":null,\"label\":\"...\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=145\",\"label\":\"145\",\"page\":145,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146\",\"label\":\"146\",\"page\":146,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23\",\"label\":\"Next &raquo;\",\"page\":23,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/weapons\",\"per_page\":16,\"to\":352,\"total\":2324}}",
                             "name": ""
                         }
                     ]
@@ -1821,7 +1845,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1895,7 +1919,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1945,12 +1969,12 @@
                                 },
                                 {
                                     "key": "lang",
-                                    "value": "jp",
+                                    "value": "es",
                                     "description": "",
                                     "disabled": false
                                 }
                             ],
-                            "raw": "{{baseUrl}}\/api\/v1\/wyporium?per_page=16&page=22&sort=architecto&lang=jp"
+                            "raw": "{{baseUrl}}\/api\/v1\/wyporium?per_page=16&page=22&sort=architecto&lang=es"
                         },
                         "method": "GET",
                         "header": [
@@ -1986,7 +2010,7 @@
                                 },
                                 {
                                     "key": "x-ratelimit-remaining",
-                                    "value": "59"
+                                    "value": "58"
                                 },
                                 {
                                     "key": "access-control-allow-origin",
@@ -1998,7 +2022,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=8\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=21\",\"next\":null},\"meta\":{\"current_page\":22,\"from\":null,\"last_page\":8,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=3\",\"label\":\"3\",\"page\":3,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=4\",\"label\":\"4\",\"page\":4,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=5\",\"label\":\"5\",\"page\":5,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=6\",\"label\":\"6\",\"page\":6,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=7\",\"label\":\"7\",\"page\":7,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=jp&page=8\",\"label\":\"8\",\"page\":8,\"active\":false},{\"url\":null,\"label\":\"Next &raquo;\",\"page\":null,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium\",\"per_page\":16,\"to\":null,\"total\":128}}",
+                            "body": "{\"data\":[],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=8\",\"prev\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=21\",\"next\":null},\"meta\":{\"current_page\":22,\"from\":null,\"last_page\":8,\"links\":[{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=21\",\"label\":\"&laquo; Previous\",\"page\":21,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=1\",\"label\":\"1\",\"page\":1,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=2\",\"label\":\"2\",\"page\":2,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=3\",\"label\":\"3\",\"page\":3,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=4\",\"label\":\"4\",\"page\":4,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=5\",\"label\":\"5\",\"page\":5,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=6\",\"label\":\"6\",\"page\":6,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=7\",\"label\":\"7\",\"page\":7,\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium?per_page=16&sort=architecto&lang=es&page=8\",\"label\":\"8\",\"page\":8,\"active\":false},{\"url\":null,\"label\":\"Next &raquo;\",\"page\":null,\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/wyporium\",\"per_page\":16,\"to\":null,\"total\":128}}",
                             "name": ""
                         }
                     ]

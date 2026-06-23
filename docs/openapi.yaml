@@ -70,12 +70,12 @@ paths:
           in: query
           name: lang
           description: ''
-          example: en
+          example: fr
           required: false
           schema:
             type: string
             description: ''
-            example: en
+            example: fr
             enum:
               - en
               - de
@@ -105,6 +105,16 @@ paths:
             example: 7
         -
           in: query
+          name: 'filter[skill]'
+          description: 'Only armor granting this skill tree ID.'
+          example: 12
+          required: false
+          schema:
+            type: integer
+            description: 'Only armor granting this skill tree ID.'
+            example: 12
+        -
+          in: query
           name: 'filter[hunter_type]'
           description: 'Filter by hunter type: Blade, Gunner, Both.'
           example: Blade
@@ -124,7 +134,7 @@ paths:
                   data:
                     -
                       id: 4260
-                      name: 'Zinogre Vambraces Z'
+                      name: 'Avant-bras Zinogre Z'
                       slot: Arms
                       rarity: 9
                       defense: 94
@@ -133,7 +143,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/arms9.png'
                     -
                       id: 4261
-                      name: 'Zinogre Faulds Z'
+                      name: 'Tassette Zinogre Z'
                       slot: Waist
                       rarity: 9
                       defense: 94
@@ -142,7 +152,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/waist9.png'
                     -
                       id: 4262
-                      name: 'Zinogre Greaves Z'
+                      name: 'Grèves Zinogre Z'
                       slot: Legs
                       rarity: 9
                       defense: 94
@@ -151,7 +161,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/legs9.png'
                     -
                       id: 4418
-                      name: 'Lagiacrus Helm X'
+                      name: 'Heaume Lagiacrus X'
                       slot: Head
                       rarity: 9
                       defense: 93
@@ -160,7 +170,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/head9.png'
                     -
                       id: 4419
-                      name: 'Lagiacrus Mail X'
+                      name: 'Cotte Lagiacrus X'
                       slot: Body
                       rarity: 9
                       defense: 93
@@ -169,7 +179,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/body9.png'
                     -
                       id: 4420
-                      name: 'Lagiacrus Braces X'
+                      name: 'Avant-bras Lagiacrus X'
                       slot: Arms
                       rarity: 9
                       defense: 93
@@ -178,7 +188,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/arms9.png'
                     -
                       id: 4421
-                      name: 'Lagiacrus Faulds X'
+                      name: 'Tassette Lagiacrus X'
                       slot: Waist
                       rarity: 9
                       defense: 93
@@ -187,7 +197,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/waist9.png'
                     -
                       id: 4422
-                      name: 'Lagiacrus Greaves X'
+                      name: 'Grèves Lagiacrus X'
                       slot: Legs
                       rarity: 9
                       defense: 93
@@ -196,7 +206,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/legs9.png'
                     -
                       id: 4148
-                      name: 'Aelucanth Vertex X'
+                      name: 'Vertex Aelucanth X'
                       slot: Head
                       rarity: 8
                       defense: 92
@@ -205,7 +215,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/head8.png'
                     -
                       id: 4149
-                      name: 'Aelucanth Thorax X'
+                      name: 'Thorax Aelucanth X'
                       slot: Body
                       rarity: 8
                       defense: 92
@@ -214,7 +224,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/body8.png'
                     -
                       id: 4150
-                      name: 'Aelucanth Brachia X'
+                      name: 'Brachia Aelucanth X'
                       slot: Arms
                       rarity: 8
                       defense: 92
@@ -223,7 +233,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/arms8.png'
                     -
                       id: 4151
-                      name: 'Aelucanth Elytra X'
+                      name: 'Élytre Aelucanth X'
                       slot: Waist
                       rarity: 8
                       defense: 92
@@ -232,7 +242,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/waist8.png'
                     -
                       id: 4152
-                      name: 'Aelucanth Crura X'
+                      name: 'Jambes Aelucanth X'
                       slot: Legs
                       rarity: 8
                       defense: 92
@@ -241,7 +251,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/legs8.png'
                     -
                       id: 4158
-                      name: 'Rhopessa Vertex X'
+                      name: 'Vertex Rhopessa X'
                       slot: Head
                       rarity: 8
                       defense: 92
@@ -250,7 +260,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/head8.png'
                     -
                       id: 4159
-                      name: 'Rhopessa Thorax X'
+                      name: 'Thorax Rhopessa X'
                       slot: Body
                       rarity: 8
                       defense: 92
@@ -259,7 +269,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/armor/body8.png'
                     -
                       id: 4160
-                      name: 'Rhopessa Brachia X'
+                      name: 'Brachia Rhopessa X'
                       slot: Arms
                       rarity: 8
                       defense: 92
@@ -267,27 +277,27 @@ paths:
                       num_slots: 1
                       icon_url: 'http://localhost:8088/assets/armor/arms8.png'
                   links:
-                    first: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=1'
-                    last: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=193'
-                    prev: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21'
-                    next: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23'
+                    first: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=1'
+                    last: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=193'
+                    prev: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21'
+                    next: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23'
                   meta:
                     current_page: 22
                     from: 337
                     last_page: 193
                     links:
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21'
                         label: '&laquo; Previous'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=1'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=1'
                         label: '1'
                         page: 1
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=2'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=2'
                         label: '2'
                         page: 2
                         active: false
@@ -296,37 +306,37 @@ paths:
                         label: ...
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=19'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=19'
                         label: '19'
                         page: 19
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=20'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=20'
                         label: '20'
                         page: 20
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21'
                         label: '21'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=22'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=22'
                         label: '22'
                         page: 22
                         active: true
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23'
                         label: '23'
                         page: 23
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=24'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=24'
                         label: '24'
                         page: 24
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=25'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=25'
                         label: '25'
                         page: 25
                         active: false
@@ -335,17 +345,17 @@ paths:
                         label: ...
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=192'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=192'
                         label: '192'
                         page: 192
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=193'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=193'
                         label: '193'
                         page: 193
                         active: false
                       -
-                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23'
+                        url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23'
                         label: 'Next &raquo;'
                         page: 23
                         active: false
@@ -358,7 +368,7 @@ paths:
                     type: array
                     example:
                       - id: 4260
-                        name: 'Zinogre Vambraces Z'
+                        name: 'Avant-bras Zinogre Z'
                         slot: Arms
                         rarity: 9
                         defense: 94
@@ -366,7 +376,7 @@ paths:
                         num_slots: 1
                         icon_url: 'http://localhost:8088/assets/armor/arms9.png'
                       - id: 4261
-                        name: 'Zinogre Faulds Z'
+                        name: 'Tassette Zinogre Z'
                         slot: Waist
                         rarity: 9
                         defense: 94
@@ -374,7 +384,7 @@ paths:
                         num_slots: 0
                         icon_url: 'http://localhost:8088/assets/armor/waist9.png'
                       - id: 4262
-                        name: 'Zinogre Greaves Z'
+                        name: 'Grèves Zinogre Z'
                         slot: Legs
                         rarity: 9
                         defense: 94
@@ -382,7 +392,7 @@ paths:
                         num_slots: 2
                         icon_url: 'http://localhost:8088/assets/armor/legs9.png'
                       - id: 4418
-                        name: 'Lagiacrus Helm X'
+                        name: 'Heaume Lagiacrus X'
                         slot: Head
                         rarity: 9
                         defense: 93
@@ -390,7 +400,7 @@ paths:
                         num_slots: 2
                         icon_url: 'http://localhost:8088/assets/armor/head9.png'
                       - id: 4419
-                        name: 'Lagiacrus Mail X'
+                        name: 'Cotte Lagiacrus X'
                         slot: Body
                         rarity: 9
                         defense: 93
@@ -398,7 +408,7 @@ paths:
                         num_slots: 1
                         icon_url: 'http://localhost:8088/assets/armor/body9.png'
                       - id: 4420
-                        name: 'Lagiacrus Braces X'
+                        name: 'Avant-bras Lagiacrus X'
                         slot: Arms
                         rarity: 9
                         defense: 93
@@ -406,7 +416,7 @@ paths:
                         num_slots: 1
                         icon_url: 'http://localhost:8088/assets/armor/arms9.png'
                       - id: 4421
-                        name: 'Lagiacrus Faulds X'
+                        name: 'Tassette Lagiacrus X'
                         slot: Waist
                         rarity: 9
                         defense: 93
@@ -414,7 +424,7 @@ paths:
                         num_slots: 3
                         icon_url: 'http://localhost:8088/assets/armor/waist9.png'
                       - id: 4422
-                        name: 'Lagiacrus Greaves X'
+                        name: 'Grèves Lagiacrus X'
                         slot: Legs
                         rarity: 9
                         defense: 93
@@ -422,7 +432,7 @@ paths:
                         num_slots: 2
                         icon_url: 'http://localhost:8088/assets/armor/legs9.png'
                       - id: 4148
-                        name: 'Aelucanth Vertex X'
+                        name: 'Vertex Aelucanth X'
                         slot: Head
                         rarity: 8
                         defense: 92
@@ -430,7 +440,7 @@ paths:
                         num_slots: 1
                         icon_url: 'http://localhost:8088/assets/armor/head8.png'
                       - id: 4149
-                        name: 'Aelucanth Thorax X'
+                        name: 'Thorax Aelucanth X'
                         slot: Body
                         rarity: 8
                         defense: 92
@@ -438,7 +448,7 @@ paths:
                         num_slots: 0
                         icon_url: 'http://localhost:8088/assets/armor/body8.png'
                       - id: 4150
-                        name: 'Aelucanth Brachia X'
+                        name: 'Brachia Aelucanth X'
                         slot: Arms
                         rarity: 8
                         defense: 92
@@ -446,7 +456,7 @@ paths:
                         num_slots: 1
                         icon_url: 'http://localhost:8088/assets/armor/arms8.png'
                       - id: 4151
-                        name: 'Aelucanth Elytra X'
+                        name: 'Élytre Aelucanth X'
                         slot: Waist
                         rarity: 8
                         defense: 92
@@ -454,7 +464,7 @@ paths:
                         num_slots: 1
                         icon_url: 'http://localhost:8088/assets/armor/waist8.png'
                       - id: 4152
-                        name: 'Aelucanth Crura X'
+                        name: 'Jambes Aelucanth X'
                         slot: Legs
                         rarity: 8
                         defense: 92
@@ -462,7 +472,7 @@ paths:
                         num_slots: 2
                         icon_url: 'http://localhost:8088/assets/armor/legs8.png'
                       - id: 4158
-                        name: 'Rhopessa Vertex X'
+                        name: 'Vertex Rhopessa X'
                         slot: Head
                         rarity: 8
                         defense: 92
@@ -470,7 +480,7 @@ paths:
                         num_slots: 1
                         icon_url: 'http://localhost:8088/assets/armor/head8.png'
                       - id: 4159
-                        name: 'Rhopessa Thorax X'
+                        name: 'Thorax Rhopessa X'
                         slot: Body
                         rarity: 8
                         defense: 92
@@ -478,7 +488,7 @@ paths:
                         num_slots: 0
                         icon_url: 'http://localhost:8088/assets/armor/body8.png'
                       - id: 4160
-                        name: 'Rhopessa Brachia X'
+                        name: 'Brachia Rhopessa X'
                         slot: Arms
                         rarity: 8
                         defense: 92
@@ -493,7 +503,7 @@ paths:
                           example: 4260
                         name:
                           type: string
-                          example: 'Zinogre Vambraces Z'
+                          example: 'Avant-bras Zinogre Z'
                         slot:
                           type: string
                           example: Arms
@@ -517,16 +527,16 @@ paths:
                     properties:
                       first:
                         type: string
-                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=1'
+                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=1'
                       last:
                         type: string
-                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=193'
+                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=193'
                       prev:
                         type: string
-                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21'
+                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21'
                       next:
                         type: string
-                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23'
+                        example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23'
                   meta:
                     type: object
                     properties:
@@ -542,61 +552,61 @@ paths:
                       links:
                         type: array
                         example:
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21'
                             label: '&laquo; Previous'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=1'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=1'
                             label: '1'
                             page: 1
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=2'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=2'
                             label: '2'
                             page: 2
                             active: false
                           - url: null
                             label: ...
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=19'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=19'
                             label: '19'
                             page: 19
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=20'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=20'
                             label: '20'
                             page: 20
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21'
                             label: '21'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=22'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=22'
                             label: '22'
                             page: 22
                             active: true
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23'
                             label: '23'
                             page: 23
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=24'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=24'
                             label: '24'
                             page: 24
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=25'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=25'
                             label: '25'
                             page: 25
                             active: false
                           - url: null
                             label: ...
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=192'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=192'
                             label: '192'
                             page: 192
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=193'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=193'
                             label: '193'
                             page: 193
                             active: false
-                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=23'
+                          - url: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=23'
                             label: 'Next &raquo;'
                             page: 23
                             active: false
@@ -605,7 +615,7 @@ paths:
                           properties:
                             url:
                               type: string
-                              example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=en&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bhunter_type%5D=Blade&page=21'
+                              example: 'http://localhost/api/v1/armor?per_page=16&sort=-defense&lang=fr&filter%5Bslot%5D=Head&filter%5Brarity%5D=7&filter%5Bskill%5D=12&filter%5Bhunter_type%5D=Blade&page=21'
                             label:
                               type: string
                               example: '&laquo; Previous'
@@ -991,12 +1001,12 @@ paths:
           in: query
           name: lang
           description: ''
-          example: en
+          example: it
           required: false
           schema:
             type: string
             description: ''
-            example: en
+            example: it
             enum:
               - en
               - de
@@ -1271,12 +1281,12 @@ paths:
           in: query
           name: lang
           description: ''
-          example: jp
+          example: it
           required: false
           schema:
             type: string
             description: ''
-            example: jp
+            example: it
             enum:
               - en
               - de
@@ -1294,9 +1304,9 @@ paths:
                 example:
                   data: []
                   links:
-                    first: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=1'
-                    last: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=9'
-                    prev: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=21'
+                    first: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=1'
+                    last: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=9'
+                    prev: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=21'
                     next: null
                   meta:
                     current_page: 22
@@ -1304,52 +1314,52 @@ paths:
                     last_page: 9
                     links:
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=21'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=21'
                         label: '&laquo; Previous'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=1'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=1'
                         label: '1'
                         page: 1
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=2'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=2'
                         label: '2'
                         page: 2
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=3'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=3'
                         label: '3'
                         page: 3
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=4'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=4'
                         label: '4'
                         page: 4
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=5'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=5'
                         label: '5'
                         page: 5
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=6'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=6'
                         label: '6'
                         page: 6
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=7'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=7'
                         label: '7'
                         page: 7
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=8'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=8'
                         label: '8'
                         page: 8
                         active: false
                       -
-                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=9'
+                        url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=9'
                         label: '9'
                         page: 9
                         active: false
@@ -1371,13 +1381,13 @@ paths:
                     properties:
                       first:
                         type: string
-                        example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=1'
+                        example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=1'
                       last:
                         type: string
-                        example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=9'
+                        example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=9'
                       prev:
                         type: string
-                        example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=21'
+                        example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=21'
                       next:
                         type: string
                         example: null
@@ -1398,43 +1408,43 @@ paths:
                       links:
                         type: array
                         example:
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=21'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=21'
                             label: '&laquo; Previous'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=1'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=1'
                             label: '1'
                             page: 1
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=2'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=2'
                             label: '2'
                             page: 2
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=3'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=3'
                             label: '3'
                             page: 3
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=4'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=4'
                             label: '4'
                             page: 4
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=5'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=5'
                             label: '5'
                             page: 5
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=6'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=6'
                             label: '6'
                             page: 6
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=7'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=7'
                             label: '7'
                             page: 7
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=8'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=8'
                             label: '8'
                             page: 8
                             active: false
-                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=9'
+                          - url: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=9'
                             label: '9'
                             page: 9
                             active: false
@@ -1447,7 +1457,7 @@ paths:
                           properties:
                             url:
                               type: string
-                              example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=jp&page=21'
+                              example: 'http://localhost/api/v1/horn-melodies?per_page=16&sort=architecto&lang=it&page=21'
                             label:
                               type: string
                               example: '&laquo; Previous'
@@ -1475,8 +1485,8 @@ paths:
       security: []
   /api/v1/items:
     get:
-      summary: ''
-      operationId: getApiV1Items
+      summary: 'List items.'
+      operationId: listItems
       description: ''
       parameters:
         -
@@ -1502,23 +1512,23 @@ paths:
         -
           in: query
           name: sort
-          description: ''
-          example: architecto
+          description: 'Sort by name, rarity, buy or sell (prefix - to reverse).'
+          example: '-rarity'
           required: false
           schema:
             type: string
-            description: ''
-            example: architecto
+            description: 'Sort by name, rarity, buy or sell (prefix - to reverse).'
+            example: '-rarity'
         -
           in: query
           name: lang
           description: ''
-          example: it
+          example: jp
           required: false
           schema:
             type: string
             description: ''
-            example: it
+            example: jp
             enum:
               - en
               - de
@@ -1526,31 +1536,481 @@ paths:
               - es
               - it
               - jp
+        -
+          in: query
+          name: 'filter[type]'
+          description: 'Filter by item type.'
+          example: Ore
+          required: false
+          schema:
+            type: string
+            description: 'Filter by item type.'
+            example: Ore
+        -
+          in: query
+          name: 'filter[rarity]'
+          description: 'Filter by rarity (1-10).'
+          example: 7
+          required: false
+          schema:
+            type: integer
+            description: 'Filter by rarity (1-10).'
+            example: 7
+        -
+          in: query
+          name: 'filter[name]'
+          description: 'Partial name match.'
+          example: potion
+          required: false
+          schema:
+            type: string
+            description: 'Partial name match.'
+            example: potion
       responses:
-        400:
+        200:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  error:
-                    status: 400
-                    code: bad_request
-                    message: 'Requested sort(s) `architecto` is not allowed. Allowed sort(s) are `name, rarity, buy, sell, id`.'
+                  data:
+                    -
+                      id: 4983
+                      name: GX荒天【羽袂】
+                      type: Armor
+                      sub_type: Arms
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4982
+                      name: GX荒天【羽衣】
+                      type: Armor
+                      sub_type: Body
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4981
+                      name: GX荒天【光冠】
+                      type: Armor
+                      sub_type: Head
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4980
+                      name: GXグリードクルス
+                      type: Armor
+                      sub_type: Legs
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4979
+                      name: GXグリードタセット
+                      type: Armor
+                      sub_type: Waist
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4978
+                      name: GXグリードカノン
+                      type: Armor
+                      sub_type: Arms
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4977
+                      name: GXグリードプレート
+                      type: Armor
+                      sub_type: Body
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4976
+                      name: GXグリードコイフ
+                      type: Armor
+                      sub_type: Head
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4975
+                      name: GXグリードキュイス
+                      type: Armor
+                      sub_type: Legs
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4974
+                      name: GXグリードランバー
+                      type: Armor
+                      sub_type: Waist
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4973
+                      name: GXグリードクラーク
+                      type: Armor
+                      sub_type: Arms
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4972
+                      name: GXグリードアーマー
+                      type: Armor
+                      sub_type: Body
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4971
+                      name: GXグリードカスク
+                      type: Armor
+                      sub_type: Head
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4970
+                      name: GXハンタークルス
+                      type: Armor
+                      sub_type: Legs
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4969
+                      name: GXハンタータセット
+                      type: Armor
+                      sub_type: Waist
+                      rarity: 10
+                      icon_url: null
+                    -
+                      id: 4968
+                      name: GXハンターカノン
+                      type: Armor
+                      sub_type: Arms
+                      rarity: 10
+                      icon_url: null
+                  links:
+                    first: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1'
+                    last: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458'
+                    prev: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21'
+                    next: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23'
+                  meta:
+                    current_page: 22
+                    from: 337
+                    last_page: 458
+                    links:
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21'
+                        label: '&laquo; Previous'
+                        page: 21
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1'
+                        label: '1'
+                        page: 1
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=2'
+                        label: '2'
+                        page: 2
+                        active: false
+                      -
+                        url: null
+                        label: ...
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=19'
+                        label: '19'
+                        page: 19
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=20'
+                        label: '20'
+                        page: 20
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21'
+                        label: '21'
+                        page: 21
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=22'
+                        label: '22'
+                        page: 22
+                        active: true
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23'
+                        label: '23'
+                        page: 23
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=24'
+                        label: '24'
+                        page: 24
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=25'
+                        label: '25'
+                        page: 25
+                        active: false
+                      -
+                        url: null
+                        label: ...
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=457'
+                        label: '457'
+                        page: 457
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458'
+                        label: '458'
+                        page: 458
+                        active: false
+                      -
+                        url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23'
+                        label: 'Next &raquo;'
+                        page: 23
+                        active: false
+                    path: 'http://localhost/api/v1/items'
+                    per_page: 16
+                    to: 352
+                    total: 7324
                 properties:
-                  error:
+                  data:
+                    type: array
+                    example:
+                      - id: 4983
+                        name: GX荒天【羽袂】
+                        type: Armor
+                        sub_type: Arms
+                        rarity: 10
+                        icon_url: null
+                      - id: 4982
+                        name: GX荒天【羽衣】
+                        type: Armor
+                        sub_type: Body
+                        rarity: 10
+                        icon_url: null
+                      - id: 4981
+                        name: GX荒天【光冠】
+                        type: Armor
+                        sub_type: Head
+                        rarity: 10
+                        icon_url: null
+                      - id: 4980
+                        name: GXグリードクルス
+                        type: Armor
+                        sub_type: Legs
+                        rarity: 10
+                        icon_url: null
+                      - id: 4979
+                        name: GXグリードタセット
+                        type: Armor
+                        sub_type: Waist
+                        rarity: 10
+                        icon_url: null
+                      - id: 4978
+                        name: GXグリードカノン
+                        type: Armor
+                        sub_type: Arms
+                        rarity: 10
+                        icon_url: null
+                      - id: 4977
+                        name: GXグリードプレート
+                        type: Armor
+                        sub_type: Body
+                        rarity: 10
+                        icon_url: null
+                      - id: 4976
+                        name: GXグリードコイフ
+                        type: Armor
+                        sub_type: Head
+                        rarity: 10
+                        icon_url: null
+                      - id: 4975
+                        name: GXグリードキュイス
+                        type: Armor
+                        sub_type: Legs
+                        rarity: 10
+                        icon_url: null
+                      - id: 4974
+                        name: GXグリードランバー
+                        type: Armor
+                        sub_type: Waist
+                        rarity: 10
+                        icon_url: null
+                      - id: 4973
+                        name: GXグリードクラーク
+                        type: Armor
+                        sub_type: Arms
+                        rarity: 10
+                        icon_url: null
+                      - id: 4972
+                        name: GXグリードアーマー
+                        type: Armor
+                        sub_type: Body
+                        rarity: 10
+                        icon_url: null
+                      - id: 4971
+                        name: GXグリードカスク
+                        type: Armor
+                        sub_type: Head
+                        rarity: 10
+                        icon_url: null
+                      - id: 4970
+                        name: GXハンタークルス
+                        type: Armor
+                        sub_type: Legs
+                        rarity: 10
+                        icon_url: null
+                      - id: 4969
+                        name: GXハンタータセット
+                        type: Armor
+                        sub_type: Waist
+                        rarity: 10
+                        icon_url: null
+                      - id: 4968
+                        name: GXハンターカノン
+                        type: Armor
+                        sub_type: Arms
+                        rarity: 10
+                        icon_url: null
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 4983
+                        name:
+                          type: string
+                          example: GX荒天【羽袂】
+                        type:
+                          type: string
+                          example: Armor
+                        sub_type:
+                          type: string
+                          example: Arms
+                        rarity:
+                          type: integer
+                          example: 10
+                        icon_url:
+                          type: string
+                          example: null
+                          nullable: true
+                  links:
                     type: object
                     properties:
-                      status:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458'
+                      prev:
+                        type: string
+                        example: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21'
+                      next:
+                        type: string
+                        example: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
                         type: integer
-                        example: 400
-                      code:
+                        example: 22
+                      from:
+                        type: integer
+                        example: 337
+                      last_page:
+                        type: integer
+                        example: 458
+                      links:
+                        type: array
+                        example:
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21'
+                            label: '&laquo; Previous'
+                            page: 21
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1'
+                            label: '1'
+                            page: 1
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=2'
+                            label: '2'
+                            page: 2
+                            active: false
+                          - url: null
+                            label: ...
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=19'
+                            label: '19'
+                            page: 19
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=20'
+                            label: '20'
+                            page: 20
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21'
+                            label: '21'
+                            page: 21
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=22'
+                            label: '22'
+                            page: 22
+                            active: true
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23'
+                            label: '23'
+                            page: 23
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=24'
+                            label: '24'
+                            page: 24
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=25'
+                            label: '25'
+                            page: 25
+                            active: false
+                          - url: null
+                            label: ...
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=457'
+                            label: '457'
+                            page: 457
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458'
+                            label: '458'
+                            page: 458
+                            active: false
+                          - url: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23'
+                            label: 'Next &raquo;'
+                            page: 23
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: 'http://localhost/api/v1/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21'
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            page:
+                              type: integer
+                              example: 21
+                            active:
+                              type: boolean
+                              example: false
+                      path:
                         type: string
-                        example: bad_request
-                      message:
-                        type: string
-                        example: 'Requested sort(s) `architecto` is not allowed. Allowed sort(s) are `name, rarity, buy, sell, id`.'
+                        example: 'http://localhost/api/v1/items'
+                      per_page:
+                        type: integer
+                        example: 16
+                      to:
+                        type: integer
+                        example: 352
+                      total:
+                        type: integer
+                        example: 7324
       tags:
         - Items
       security: []
@@ -55562,12 +56022,12 @@ paths:
           in: query
           name: lang
           description: ''
-          example: it
+          example: de
           required: false
           schema:
             type: string
             description: ''
-            example: it
+            example: de
             enum:
               - en
               - de
@@ -55711,27 +56171,27 @@ paths:
                       type: Normal
                       stars: 8
                   links:
-                    first: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
-                    last: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
-                    prev: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
-                    next: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
+                    first: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
+                    last: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
+                    prev: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
+                    next: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
                   meta:
                     current_page: 22
                     from: 337
                     last_page: 36
                     links:
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
                         label: '&laquo; Previous'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
                         label: '1'
                         page: 1
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=2'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=2'
                         label: '2'
                         page: 2
                         active: false
@@ -55740,37 +56200,37 @@ paths:
                         label: ...
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=19'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=19'
                         label: '19'
                         page: 19
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=20'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=20'
                         label: '20'
                         page: 20
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
                         label: '21'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=22'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=22'
                         label: '22'
                         page: 22
                         active: true
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
                         label: '23'
                         page: 23
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=24'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=24'
                         label: '24'
                         page: 24
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=25'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=25'
                         label: '25'
                         page: 25
                         active: false
@@ -55779,17 +56239,17 @@ paths:
                         label: ...
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=35'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=35'
                         label: '35'
                         page: 35
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
                         label: '36'
                         page: 36
                         active: false
                       -
-                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
+                        url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
                         label: 'Next &raquo;'
                         page: 23
                         active: false
@@ -55904,16 +56364,16 @@ paths:
                     properties:
                       first:
                         type: string
-                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
+                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
                       last:
                         type: string
-                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
+                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
                       prev:
                         type: string
-                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
+                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
                       next:
                         type: string
-                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
+                        example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
                   meta:
                     type: object
                     properties:
@@ -55929,61 +56389,61 @@ paths:
                       links:
                         type: array
                         example:
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
                             label: '&laquo; Previous'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=1'
                             label: '1'
                             page: 1
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=2'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=2'
                             label: '2'
                             page: 2
                             active: false
                           - url: null
                             label: ...
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=19'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=19'
                             label: '19'
                             page: 19
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=20'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=20'
                             label: '20'
                             page: 20
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
                             label: '21'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=22'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=22'
                             label: '22'
                             page: 22
                             active: true
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
                             label: '23'
                             page: 23
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=24'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=24'
                             label: '24'
                             page: 24
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=25'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=25'
                             label: '25'
                             page: 25
                             active: false
                           - url: null
                             label: ...
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=35'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=35'
                             label: '35'
                             page: 35
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=36'
                             label: '36'
                             page: 36
                             active: false
-                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
+                          - url: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=23'
                             label: 'Next &raquo;'
                             page: 23
                             active: false
@@ -55992,7 +56452,7 @@ paths:
                           properties:
                             url:
                               type: string
-                              example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=it&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
+                              example: 'http://localhost/api/v1/quests?per_page=16&sort=stars&lang=de&filter%5Bhub%5D=Guild&filter%5Bstars%5D=5&filter%5Bmonster%5D=24&page=21'
                             label:
                               type: string
                               example: '&laquo; Previous'
@@ -56925,7 +57385,7 @@ paths:
                 lang:
                   type: string
                   description: ''
-                  example: it
+                  example: fr
                   enum:
                     - en
                     - de
@@ -56976,12 +57436,12 @@ paths:
           in: query
           name: lang
           description: ''
-          example: es
+          example: jp
           required: false
           schema:
             type: string
             description: ''
-            example: es
+            example: jp
             enum:
               - en
               - de
@@ -58938,12 +59398,12 @@ paths:
           in: query
           name: lang
           description: ''
-          example: es
+          example: it
           required: false
           schema:
             type: string
             description: ''
-            example: es
+            example: it
             enum:
               - en
               - de
@@ -58992,7 +59452,7 @@ paths:
                   data:
                     -
                       id: 6025
-                      name: 'Tambor aullador'
+                      name: 'Necrotamburo urlante'
                       wtype: 'Hunting Horn'
                       rarity: 7
                       attack: 988
@@ -59001,7 +59461,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/hunting_horn7.png'
                     -
                       id: 6069
-                      name: 'Solo pesado'
+                      name: 'Rintocco pesante'
                       wtype: 'Hunting Horn'
                       rarity: 8
                       attack: 988
@@ -59019,7 +59479,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/hunting_horn7.png'
                     -
                       id: 6495
-                      name: 'Tajafuegos de Rath'
+                      name: 'Combinatore Rath'
                       wtype: 'Switch Axe'
                       rarity: 7
                       attack: 972
@@ -59028,7 +59488,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/switch_axe7.png'
                     -
                       id: 6501
-                      name: 'Rosa celeste'
+                      name: 'Rosa azzurra'
                       wtype: 'Switch Axe'
                       rarity: 6
                       attack: 972
@@ -59037,7 +59497,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/switch_axe6.png'
                     -
                       id: 6585
-                      name: 'Zas atronador Kirin+'
+                      name: 'Eco di tuono Kirin+'
                       wtype: 'Switch Axe'
                       rarity: 8
                       attack: 972
@@ -59046,7 +59506,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/switch_axe8.png'
                     -
                       id: 6595
-                      name: 'Hacha de Aksa'
+                      name: 'Spad-ascia Aksa'
                       wtype: 'Switch Axe'
                       rarity: 6
                       attack: 972
@@ -59055,7 +59515,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/switch_axe6.png'
                     -
                       id: 6599
-                      name: 'Falange de escamas'
+                      name: 'Falange squamata'
                       wtype: 'Switch Axe'
                       rarity: 6
                       attack: 972
@@ -59073,7 +59533,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/switch_axe7.png'
                     -
                       id: 6626
-                      name: 'Farasa de Daora'
+                      name: 'Farasa Daora'
                       wtype: 'Switch Axe'
                       rarity: 7
                       attack: 972
@@ -59100,7 +59560,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/switch_axe6.png'
                     -
                       id: 6655
-                      name: 'Alondra celeste'
+                      name: 'Allodola azzurra'
                       wtype: 'Charge Blade'
                       rarity: 9
                       attack: 972
@@ -59109,7 +59569,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/charge_blade9.png'
                     -
                       id: 6663
-                      name: Propensión
+                      name: Propensione
                       wtype: 'Charge Blade'
                       rarity: 10
                       attack: 972
@@ -59118,7 +59578,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/charge_blade10.png'
                     -
                       id: 6697
-                      name: Maximinsecto
+                      name: Maximinsetto
                       wtype: 'Charge Blade'
                       rarity: 9
                       attack: 972
@@ -59127,7 +59587,7 @@ paths:
                       icon_url: 'http://localhost:8088/assets/weapons/charge_blade9.png'
                     -
                       id: 6706
-                      name: 'Tortuga de Daora'
+                      name: 'Schiantuggine Daora'
                       wtype: 'Charge Blade'
                       rarity: 10
                       attack: 972
@@ -59135,27 +59595,27 @@ paths:
                       final: false
                       icon_url: 'http://localhost:8088/assets/weapons/charge_blade10.png'
                   links:
-                    first: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
-                    last: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
-                    prev: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
-                    next: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
+                    first: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
+                    last: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
+                    prev: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
+                    next: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
                   meta:
                     current_page: 22
                     from: 337
                     last_page: 146
                     links:
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
                         label: '&laquo; Previous'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
                         label: '1'
                         page: 1
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=2'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=2'
                         label: '2'
                         page: 2
                         active: false
@@ -59164,37 +59624,37 @@ paths:
                         label: ...
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=19'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=19'
                         label: '19'
                         page: 19
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=20'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=20'
                         label: '20'
                         page: 20
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
                         label: '21'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=22'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=22'
                         label: '22'
                         page: 22
                         active: true
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
                         label: '23'
                         page: 23
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=24'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=24'
                         label: '24'
                         page: 24
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=25'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=25'
                         label: '25'
                         page: 25
                         active: false
@@ -59203,17 +59663,17 @@ paths:
                         label: ...
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=145'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=145'
                         label: '145'
                         page: 145
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
                         label: '146'
                         page: 146
                         active: false
                       -
-                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
+                        url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
                         label: 'Next &raquo;'
                         page: 23
                         active: false
@@ -59226,7 +59686,7 @@ paths:
                     type: array
                     example:
                       - id: 6025
-                        name: 'Tambor aullador'
+                        name: 'Necrotamburo urlante'
                         wtype: 'Hunting Horn'
                         rarity: 7
                         attack: 988
@@ -59234,7 +59694,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/hunting_horn7.png'
                       - id: 6069
-                        name: 'Solo pesado'
+                        name: 'Rintocco pesante'
                         wtype: 'Hunting Horn'
                         rarity: 8
                         attack: 988
@@ -59250,7 +59710,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/hunting_horn7.png'
                       - id: 6495
-                        name: 'Tajafuegos de Rath'
+                        name: 'Combinatore Rath'
                         wtype: 'Switch Axe'
                         rarity: 7
                         attack: 972
@@ -59258,7 +59718,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/switch_axe7.png'
                       - id: 6501
-                        name: 'Rosa celeste'
+                        name: 'Rosa azzurra'
                         wtype: 'Switch Axe'
                         rarity: 6
                         attack: 972
@@ -59266,7 +59726,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/switch_axe6.png'
                       - id: 6585
-                        name: 'Zas atronador Kirin+'
+                        name: 'Eco di tuono Kirin+'
                         wtype: 'Switch Axe'
                         rarity: 8
                         attack: 972
@@ -59274,7 +59734,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/switch_axe8.png'
                       - id: 6595
-                        name: 'Hacha de Aksa'
+                        name: 'Spad-ascia Aksa'
                         wtype: 'Switch Axe'
                         rarity: 6
                         attack: 972
@@ -59282,7 +59742,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/switch_axe6.png'
                       - id: 6599
-                        name: 'Falange de escamas'
+                        name: 'Falange squamata'
                         wtype: 'Switch Axe'
                         rarity: 6
                         attack: 972
@@ -59298,7 +59758,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/switch_axe7.png'
                       - id: 6626
-                        name: 'Farasa de Daora'
+                        name: 'Farasa Daora'
                         wtype: 'Switch Axe'
                         rarity: 7
                         attack: 972
@@ -59322,7 +59782,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/switch_axe6.png'
                       - id: 6655
-                        name: 'Alondra celeste'
+                        name: 'Allodola azzurra'
                         wtype: 'Charge Blade'
                         rarity: 9
                         attack: 972
@@ -59330,7 +59790,7 @@ paths:
                         final: true
                         icon_url: 'http://localhost:8088/assets/weapons/charge_blade9.png'
                       - id: 6663
-                        name: Propensión
+                        name: Propensione
                         wtype: 'Charge Blade'
                         rarity: 10
                         attack: 972
@@ -59338,7 +59798,7 @@ paths:
                         final: true
                         icon_url: 'http://localhost:8088/assets/weapons/charge_blade10.png'
                       - id: 6697
-                        name: Maximinsecto
+                        name: Maximinsetto
                         wtype: 'Charge Blade'
                         rarity: 9
                         attack: 972
@@ -59346,7 +59806,7 @@ paths:
                         final: false
                         icon_url: 'http://localhost:8088/assets/weapons/charge_blade9.png'
                       - id: 6706
-                        name: 'Tortuga de Daora'
+                        name: 'Schiantuggine Daora'
                         wtype: 'Charge Blade'
                         rarity: 10
                         attack: 972
@@ -59361,7 +59821,7 @@ paths:
                           example: 6025
                         name:
                           type: string
-                          example: 'Tambor aullador'
+                          example: 'Necrotamburo urlante'
                         wtype:
                           type: string
                           example: 'Hunting Horn'
@@ -59385,16 +59845,16 @@ paths:
                     properties:
                       first:
                         type: string
-                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
+                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
                       last:
                         type: string
-                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
+                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
                       prev:
                         type: string
-                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
+                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
                       next:
                         type: string
-                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
+                        example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
                   meta:
                     type: object
                     properties:
@@ -59410,61 +59870,61 @@ paths:
                       links:
                         type: array
                         example:
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
                             label: '&laquo; Previous'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=1'
                             label: '1'
                             page: 1
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=2'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=2'
                             label: '2'
                             page: 2
                             active: false
                           - url: null
                             label: ...
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=19'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=19'
                             label: '19'
                             page: 19
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=20'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=20'
                             label: '20'
                             page: 20
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
                             label: '21'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=22'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=22'
                             label: '22'
                             page: 22
                             active: true
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
                             label: '23'
                             page: 23
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=24'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=24'
                             label: '24'
                             page: 24
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=25'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=25'
                             label: '25'
                             page: 25
                             active: false
                           - url: null
                             label: ...
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=145'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=145'
                             label: '145'
                             page: 145
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=146'
                             label: '146'
                             page: 146
                             active: false
-                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
+                          - url: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=23'
                             label: 'Next &raquo;'
                             page: 23
                             active: false
@@ -59473,7 +59933,7 @@ paths:
                           properties:
                             url:
                               type: string
-                              example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=es&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
+                              example: 'http://localhost/api/v1/weapons?per_page=16&sort=-attack&lang=it&filter%5Bwtype%5D=Great%20Sword&filter%5Brarity%5D=7&filter%5Belement%5D=Fire&page=21'
                             label:
                               type: string
                               example: '&laquo; Previous'
@@ -61574,12 +62034,12 @@ paths:
           in: query
           name: lang
           description: ''
-          example: jp
+          example: es
           required: false
           schema:
             type: string
             description: ''
-            example: jp
+            example: es
             enum:
               - en
               - de
@@ -61597,9 +62057,9 @@ paths:
                 example:
                   data: []
                   links:
-                    first: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=1'
-                    last: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=8'
-                    prev: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=21'
+                    first: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=1'
+                    last: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=8'
+                    prev: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=21'
                     next: null
                   meta:
                     current_page: 22
@@ -61607,47 +62067,47 @@ paths:
                     last_page: 8
                     links:
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=21'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=21'
                         label: '&laquo; Previous'
                         page: 21
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=1'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=1'
                         label: '1'
                         page: 1
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=2'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=2'
                         label: '2'
                         page: 2
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=3'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=3'
                         label: '3'
                         page: 3
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=4'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=4'
                         label: '4'
                         page: 4
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=5'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=5'
                         label: '5'
                         page: 5
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=6'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=6'
                         label: '6'
                         page: 6
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=7'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=7'
                         label: '7'
                         page: 7
                         active: false
                       -
-                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=8'
+                        url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=8'
                         label: '8'
                         page: 8
                         active: false
@@ -61669,13 +62129,13 @@ paths:
                     properties:
                       first:
                         type: string
-                        example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=1'
+                        example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=1'
                       last:
                         type: string
-                        example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=8'
+                        example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=8'
                       prev:
                         type: string
-                        example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=21'
+                        example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=21'
                       next:
                         type: string
                         example: null
@@ -61696,39 +62156,39 @@ paths:
                       links:
                         type: array
                         example:
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=21'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=21'
                             label: '&laquo; Previous'
                             page: 21
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=1'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=1'
                             label: '1'
                             page: 1
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=2'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=2'
                             label: '2'
                             page: 2
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=3'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=3'
                             label: '3'
                             page: 3
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=4'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=4'
                             label: '4'
                             page: 4
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=5'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=5'
                             label: '5'
                             page: 5
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=6'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=6'
                             label: '6'
                             page: 6
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=7'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=7'
                             label: '7'
                             page: 7
                             active: false
-                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=8'
+                          - url: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=8'
                             label: '8'
                             page: 8
                             active: false
@@ -61741,7 +62201,7 @@ paths:
                           properties:
                             url:
                               type: string
-                              example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=jp&page=21'
+                              example: 'http://localhost/api/v1/wyporium?per_page=16&sort=architecto&lang=es&page=21'
                             label:
                               type: string
                               example: '&laquo; Previous'

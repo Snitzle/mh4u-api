@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Models\Armor;
 use App\Models\Item;
+use App\Models\SkillTree;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);
@@ -28,4 +29,16 @@ it('filters armor by rarity (via the shared item)', function (): void {
         ->assertOk()
         ->assertJsonCount(1, 'data')
         ->assertJsonPath('data.0.rarity', 9);
+});
+
+it('filters armor by granted skill tree', function (): void {
+    $skill = SkillTree::factory()->create();
+    $withSkill = Armor::factory()->create();
+    $withSkill->skillTrees()->attach($skill->id, ['point_value' => 3]);
+    Armor::factory()->create();
+
+    $this->getJson("/api/v1/armor?filter[skill]={$skill->id}")
+        ->assertOk()
+        ->assertJsonCount(1, 'data')
+        ->assertJsonPath('data.0.id', $withSkill->id);
 });

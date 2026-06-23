@@ -21,6 +21,14 @@ use Spatie\QueryBuilder\QueryBuilder;
  */
 class ItemController extends ApiController
 {
+    /**
+     * List items.
+     *
+     * @queryParam filter[type] string Filter by item type. Example: Ore
+     * @queryParam filter[rarity] integer Filter by rarity (1-10). Example: 7
+     * @queryParam filter[name] string Partial name match. Example: potion
+     * @queryParam sort string Sort by name, rarity, buy or sell (prefix - to reverse). Example: -rarity
+     */
     public function index(IndexRequest $request): AnonymousResourceCollection
     {
         $items = QueryBuilder::for(Item::class)

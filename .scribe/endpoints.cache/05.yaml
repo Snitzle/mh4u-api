@@ -20,7 +20,7 @@ endpoints:
         Item detail includes where to get it and what it crafts into.
       subgroup: ''
       subgroupDescription: ''
-      title: ''
+      title: 'List items.'
       description: ''
       authenticated: false
       deprecated: false
@@ -55,12 +55,12 @@ endpoints:
       sort:
         custom: []
         name: sort
-        description: ''
+        description: 'Sort by name, rarity, buy or sell (prefix - to reverse).'
         required: false
-        example: architecto
+        example: '-rarity'
         type: string
         enumValues: []
-        exampleWasSpecified: false
+        exampleWasSpecified: true
         nullable: false
         deprecated: false
       lang:
@@ -68,7 +68,7 @@ endpoints:
         name: lang
         description: ''
         required: false
-        example: it
+        example: jp
         type: string
         enumValues:
           - en
@@ -80,24 +80,60 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      'filter[type]':
+        custom: []
+        name: 'filter[type]'
+        description: 'Filter by item type.'
+        required: false
+        example: Ore
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      'filter[rarity]':
+        custom: []
+        name: 'filter[rarity]'
+        description: 'Filter by rarity (1-10).'
+        required: false
+        example: 7
+        type: integer
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
+      'filter[name]':
+        custom: []
+        name: 'filter[name]'
+        description: 'Partial name match.'
+        required: false
+        example: potion
+        type: string
+        enumValues: []
+        exampleWasSpecified: true
+        nullable: false
+        deprecated: false
     cleanQueryParameters:
       per_page: 16
       page: 22
-      sort: architecto
-      lang: it
+      sort: '-rarity'
+      lang: jp
+      'filter[type]': Ore
+      'filter[rarity]': 7
+      'filter[name]': potion
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
     responses:
       -
         custom: []
-        status: 400
-        content: '{"error":{"status":400,"code":"bad_request","message":"Requested sort(s) `architecto` is not allowed. Allowed sort(s) are `name, rarity, buy, sell, id`."}}'
+        status: 200
+        content: '{"data":[{"id":4983,"name":"GX\u8352\u5929\u3010\u7fbd\u8882\u3011","type":"Armor","sub_type":"Arms","rarity":10,"icon_url":null},{"id":4982,"name":"GX\u8352\u5929\u3010\u7fbd\u8863\u3011","type":"Armor","sub_type":"Body","rarity":10,"icon_url":null},{"id":4981,"name":"GX\u8352\u5929\u3010\u5149\u51a0\u3011","type":"Armor","sub_type":"Head","rarity":10,"icon_url":null},{"id":4980,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30af\u30eb\u30b9","type":"Armor","sub_type":"Legs","rarity":10,"icon_url":null},{"id":4979,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30bf\u30bb\u30c3\u30c8","type":"Armor","sub_type":"Waist","rarity":10,"icon_url":null},{"id":4978,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30ab\u30ce\u30f3","type":"Armor","sub_type":"Arms","rarity":10,"icon_url":null},{"id":4977,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30d7\u30ec\u30fc\u30c8","type":"Armor","sub_type":"Body","rarity":10,"icon_url":null},{"id":4976,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30b3\u30a4\u30d5","type":"Armor","sub_type":"Head","rarity":10,"icon_url":null},{"id":4975,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30ad\u30e5\u30a4\u30b9","type":"Armor","sub_type":"Legs","rarity":10,"icon_url":null},{"id":4974,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30e9\u30f3\u30d0\u30fc","type":"Armor","sub_type":"Waist","rarity":10,"icon_url":null},{"id":4973,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30af\u30e9\u30fc\u30af","type":"Armor","sub_type":"Arms","rarity":10,"icon_url":null},{"id":4972,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30a2\u30fc\u30de\u30fc","type":"Armor","sub_type":"Body","rarity":10,"icon_url":null},{"id":4971,"name":"GX\u30b0\u30ea\u30fc\u30c9\u30ab\u30b9\u30af","type":"Armor","sub_type":"Head","rarity":10,"icon_url":null},{"id":4970,"name":"GX\u30cf\u30f3\u30bf\u30fc\u30af\u30eb\u30b9","type":"Armor","sub_type":"Legs","rarity":10,"icon_url":null},{"id":4969,"name":"GX\u30cf\u30f3\u30bf\u30fc\u30bf\u30bb\u30c3\u30c8","type":"Armor","sub_type":"Waist","rarity":10,"icon_url":null},{"id":4968,"name":"GX\u30cf\u30f3\u30bf\u30fc\u30ab\u30ce\u30f3","type":"Armor","sub_type":"Arms","rarity":10,"icon_url":null}],"links":{"first":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1","last":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458","prev":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21","next":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23"},"meta":{"current_page":22,"from":337,"last_page":458,"links":[{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21","label":"&laquo; Previous","page":21,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=1","label":"1","page":1,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=2","label":"2","page":2,"active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=19","label":"19","page":19,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=20","label":"20","page":20,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=21","label":"21","page":21,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=22","label":"22","page":22,"active":true},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23","label":"23","page":23,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=24","label":"24","page":24,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=25","label":"25","page":25,"active":false},{"url":null,"label":"...","active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=457","label":"457","page":457,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=458","label":"458","page":458,"active":false},{"url":"http:\/\/localhost\/api\/v1\/items?per_page=16&sort=-rarity&lang=jp&filter%5Btype%5D=Ore&filter%5Brarity%5D=7&filter%5Bname%5D=potion&page=23","label":"Next &raquo;","page":23,"active":false}],"path":"http:\/\/localhost\/api\/v1\/items","per_page":16,"to":352,"total":7324}}'
         headers:
-          cache-control: 'no-cache, private'
+          cache-control: 'max-age=86400, public'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null
@@ -167,7 +203,7 @@ endpoints:
           cache-control: 'max-age=86400, public'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null
@@ -225,7 +261,7 @@ endpoints:
           cache-control: 'max-age=86400, public'
           content-type: application/json
           x-ratelimit-limit: '60'
-          x-ratelimit-remaining: '59'
+          x-ratelimit-remaining: '58'
           access-control-allow-origin: '*'
           access-control-expose-headers: ETag
         description: null
