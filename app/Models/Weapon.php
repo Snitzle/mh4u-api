@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 /**
  * @property WeaponType $wtype
  * @property bool|null $final
+ * @property string|null $icon_name
  */
 class Weapon extends BaseModel
 {

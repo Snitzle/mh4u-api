@@ -9,12 +9,16 @@ use App\Http\Controllers\Api\V1\ItemController;
 use App\Http\Controllers\Api\V1\LocationController;
 use App\Http\Controllers\Api\V1\MonsterController;
 use App\Http\Controllers\Api\V1\QuestController;
+use App\Http\Controllers\Api\V1\SearchController;
 use App\Http\Controllers\Api\V1\SkillTreeController;
 use App\Http\Controllers\Api\V1\WeaponController;
 use App\Http\Controllers\Api\V1\WyporiumController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->name('api.v1.')->group(function (): void {
+    // Universal search
+    Route::get('search', SearchController::class)->name('search');
+
     // Monsters
     Route::get('monsters', [MonsterController::class, 'index'])->name('monsters.index');
     Route::get('monsters/{monster}', [MonsterController::class, 'show'])->name('monsters.show');

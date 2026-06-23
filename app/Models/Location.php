@@ -6,10 +6,28 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Scout\Searchable;
 
 class Location extends BaseModel
 {
+    use Searchable;
+
     protected $table = 'locations';
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function toSearchableArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'name_de' => $this->name_de,
+            'name_fr' => $this->name_fr,
+            'name_es' => $this->name_es,
+            'name_it' => $this->name_it,
+            'name_jp' => $this->name_jp,
+        ];
+    }
 
     /** @return HasMany<Quest, $this> */
     public function quests(): HasMany

@@ -9,6 +9,7 @@ use App\Enums\QuestType;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Scout\Searchable;
 
 /**
  * @property QuestHub $hub
@@ -16,7 +17,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Quest extends BaseModel
 {
+    use Searchable;
+
     protected $table = 'quests';
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function toSearchableArray(): array
+    {
+        return [
+            'name' => $this->name,
+        ];
+    }
 
     protected function casts(): array
     {

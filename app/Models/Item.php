@@ -7,13 +7,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Laravel\Scout\Searchable;
 
 /**
  * @property-read ItemSkillTree|null $pivot
  */
 class Item extends BaseModel
 {
+    use Searchable;
+
     protected $table = 'items';
+
+    /**
+     * @return array<string, mixed>
+     */
+    public function toSearchableArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'name_de' => $this->name_de,
+            'name_fr' => $this->name_fr,
+            'name_es' => $this->name_es,
+            'name_it' => $this->name_it,
+            'name_jp' => $this->name_jp,
+        ];
+    }
 
     /** @return HasOne<Weapon, $this> */
     public function weapon(): HasOne

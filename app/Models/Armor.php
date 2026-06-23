@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property ArmorSlot $slot
  * @property Gender $gender
  * @property HunterType $hunter_type
+ * @property string|null $icon_name
  */
 class Armor extends BaseModel
 {
